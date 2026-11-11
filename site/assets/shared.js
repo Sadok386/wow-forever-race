@@ -124,6 +124,30 @@ export const QUALITIES = {
   LEGENDARY: 'Légendaire',
 };
 
+// The API sends profession names in English even with locale=fr_FR (seen on 2026-11-11), while
+// everything else comes back in French. Names already in French, or unknown, are shown as they are.
+const PROFESSION_NAMES = {
+  Alchemy: 'Alchimie',
+  Archaeology: 'Archéologie',
+  Blacksmithing: 'Forge',
+  Cooking: 'Cuisine',
+  Enchanting: 'Enchantement',
+  Engineering: 'Ingénierie',
+  'First Aid': 'Secourisme',
+  Fishing: 'Pêche',
+  Herbalism: 'Herboristerie',
+  Inscription: 'Calligraphie',
+  Jewelcrafting: 'Joaillerie',
+  Leatherworking: 'Travail du cuir',
+  Mining: 'Minage',
+  Skinning: 'Dépeçage',
+  Tailoring: 'Couture',
+};
+
+export function professionName(name) {
+  return Object.hasOwn(PROFESSION_NAMES, name) ? PROFESSION_NAMES[name] : name;
+}
+
 /** Display order of equipment slots (slot.type values of the Blizzard API). */
 export const SLOT_ORDER = [
   'HEAD', 'NECK', 'SHOULDER', 'BACK', 'CHEST', 'SHIRT', 'TABARD', 'WRIST', 'HANDS', 'WAIST', 'LEGS', 'FEET',

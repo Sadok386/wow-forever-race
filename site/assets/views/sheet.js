@@ -1,7 +1,9 @@
 // The character sheet: a wide dialog with gear, stats, professions, talents and recent level-ups.
 import { copyText, dialog, focusByKey, focusKey, h, toast } from '../dom.js';
 import { icon } from '../icons.js';
-import { QUALITIES, alternateImageUrl, armoryUrl, safeImageUrl, wowheadItemUrl } from '../shared.js';
+import {
+  QUALITIES, alternateImageUrl, armoryUrl, professionName, safeImageUrl, wowheadItemUrl,
+} from '../shared.js';
 import { buildFeed, xpNeeded, xpPercent } from '../model.js';
 import { dateTime, fullName, num, relTime } from '../format.js';
 import { avatar, chainImage } from './media.js';
@@ -112,7 +114,7 @@ function professionRow(profession) {
   return h(
     'li',
     { class: 'profs__row' },
-    h('span', null, profession.name),
+    h('span', null, professionName(profession.name)),
     bar,
     h('span', { class: 'profs__value' }, profession.max ? `${profession.skill} / ${profession.max}` : profession.skill),
   );

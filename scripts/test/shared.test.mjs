@@ -16,6 +16,7 @@ import {
   normalizeName,
   parseCharacterInput,
   playerId,
+  professionName,
   safeImageUrl,
   slugOf,
   validateName,
@@ -26,6 +27,17 @@ test('constants', () => {
   assert.deepEqual(REGIONS, ['eu', 'us', 'kr', 'tw']);
   assert.equal(MAX_PLAYERS, 50);
   assert.equal(LABEL_MAX, 24);
+});
+
+test('professionName translates the English names the API sends and keeps the others', () => {
+  // The three names the real API returned for the first tracked character.
+  assert.equal(professionName('Herbalism'), 'Herboristerie');
+  assert.equal(professionName('Cooking'), 'Cuisine');
+  assert.equal(professionName('First Aid'), 'Secourisme');
+  assert.equal(professionName('Leatherworking'), 'Travail du cuir');
+  assert.equal(professionName('Herboristerie'), 'Herboristerie');
+  assert.equal(professionName('Nouveau métier'), 'Nouveau métier');
+  assert.equal(professionName('constructor'), 'constructor');
 });
 
 test('normalizeName: case, accents, NFC, trimming', () => {
