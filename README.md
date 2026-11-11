@@ -57,10 +57,11 @@ Toute personne qui ouvre ce lien peut ajouter ou retirer des personnages et lanc
 
 ## Au quotidien
 
-- **Ajouter un personnage** : « Ajouter un personnage », puis ses deux noms et sa région. Tu peux aussi coller l'adresse de sa page d'armurerie. Il apparaît une à deux minutes plus tard.
+- **Ajouter un personnage** : « Ajouter un personnage », puis ses deux noms, sa région et le prénom de la personne qui le joue. Le prénom est obligatoire, pour que tout le monde se reconnaisse. Tu peux aussi coller l'adresse de sa page d'armurerie. Il apparaît une à deux minutes plus tard.
+- **Ajouter ou changer un prénom** : lien « modifier » à côté de « joué par… » sur la ligne du personnage, ou « Ajouter le prénom du joueur » s'il n'en a pas encore.
 - **Retirer un personnage** : bouton « Retirer » sur sa ligne. Son historique est effacé.
 - **Forcer une mise à jour** : menu → « Synchroniser maintenant ».
-- **Sans passer par le site** : onglet Actions → Tracker → Run workflow, en choisissant `add` ou `remove`. Ou modifie `players.json` à la main.
+- **Sans passer par le site** : onglet Actions → Tracker → Run workflow, en choisissant `add` (avec le prénom du joueur) ou `remove`. Ou modifie `players.json` à la main.
 
 ## À savoir
 

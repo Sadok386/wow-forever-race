@@ -144,8 +144,10 @@ export function applyOp(roster, op, nowIso) {
     return { roster: { ...roster, players }, changed: true, message: `roster: − ${display(target)}` };
   }
 
+  // The label is the first name of the person who plays the character.
   const label = cleanLabel(op.label);
   if (existing) {
+    // A tracked character can get a first name or change it; an empty one never clears it.
     if (!label || label === existing.label) {
       return { roster, changed: false, message: `roster: ${display(target)} est déjà suivi` };
     }
@@ -153,6 +155,10 @@ export function applyOp(roster, op, nowIso) {
     return { roster: { ...roster, players }, changed: true, message: `roster: ~ ${display(target)}` };
   }
 
+  // Characters tracked before this rule may still have none; a new one must come with it.
+  if (!label) {
+    throw new RosterError('Le prénom du joueur est obligatoire pour ajouter un personnage, pour que tout le monde se reconnaisse.');
+  }
   if (roster.players.length >= MAX_PLAYERS) {
     throw new RosterError(`La liste est pleine : ${MAX_PLAYERS} personnages au maximum.`);
   }

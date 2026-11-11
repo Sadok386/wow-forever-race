@@ -152,7 +152,8 @@ test('serializeRoster: format, omitted fields, unknown keys and round trip', () 
 test('serializeRoster: works on an empty roster and drops label when null', () => {
   const { roster } = parseRoster('');
   assert.deepEqual(JSON.parse(serializeRoster(roster)), { version: 1, settings: DEFAULT_SETTINGS, players: [] });
-  const r = add(roster, { label: '' }).roster;
+  // A character tracked before first names became mandatory.
+  const r = rosterOf([entry('Joe', 'Gun')]);
   assert.ok(!('label' in JSON.parse(serializeRoster(r)).players[0]));
 });
 
@@ -165,17 +166,30 @@ test('applyOp add: appends with normalised names, label and timestamp', () => {
     { id: 'eu:joe-gun', region: 'eu', slug: 'joe-gun', name: 'Joe', surname: 'Gun', label: 'Max', addedAt: NOW },
   ]);
   assert.equal(base.players.length, 0, 'input roster is not mutated');
-  assert.equal(add(base, { region: 'kr' }).message, 'roster: + Joe Gun (KR)');
-  assert.equal(add(base, { label: undefined }).roster.players[0].label, null);
+  assert.equal(add(base, { region: 'kr', label: 'Max' }).message, 'roster: + Joe Gun (KR)');
+});
+
+test('applyOp add: a new character needs the first name of its player', () => {
+  const base = rosterOf([]);
+  for (const label of [undefined, null, '', '   ', '\u0007']) {
+    assert.throws(
+      () => add(base, { label }),
+      (e) => e instanceof RosterError && /prénom du joueur est obligatoire/.test(e.message),
+      JSON.stringify(label),
+    );
+  }
+  assert.equal(base.players.length, 0, 'nothing added');
 });
 
 test('applyOp add: duplicates and label updates', () => {
-  const base = add(rosterOf([])).roster;
+  // Tracked before first names became mandatory: it has none, and re-adding it without one is fine.
+  const base = rosterOf([entry('Joe', 'Gun', { addedAt: NOW })]);
   const same = add(base);
   assert.equal(same.changed, false);
   assert.equal(same.roster, base);
   assert.equal(add(base, { name: 'JOE', surname: 'gun' }).changed, false, 'same id after normalisation');
-  assert.equal(add(base, { region: 'us' }).changed, true, 'other region is another character');
+  assert.equal(add(base, { region: 'us', label: 'Ana' }).changed, true, 'other region is another character');
+  assert.throws(() => add(base, { region: 'us' }), RosterError, 'another character still needs a first name');
 
   const labelled = add(base, { label: 'Max' });
   assert.equal(labelled.changed, true);
@@ -191,7 +205,7 @@ test('applyOp add: refuses past the limit but still allows label updates', () =>
   const players = Array.from({ length: 50 }, (_, i) => entry('Joe', `N${'abcdefghijklmnopqrstuvwxyz'[i % 26]}${'ab'[Math.floor(i / 26)]}x`));
   const full = rosterOf(players);
   assert.equal(full.players.length, 50);
-  assert.throws(() => add(full), (e) => e instanceof RosterError && /50/.test(e.message));
+  assert.throws(() => add(full, { label: 'Max' }), (e) => e instanceof RosterError && /50/.test(e.message));
   assert.equal(add(full, { surname: players[0].surname, label: 'x' }).changed, true);
 });
 
@@ -307,7 +321,7 @@ test('cli add: creates the file, writes the message, then is idempotent', () => 
 test('cli add: without ROSTER_MESSAGE_FILE still works; region is case-insensitive; unknown keys survive', () => {
   const dir = freshDir();
   fs.writeFileSync(path.join(dir, 'players.json'), JSON.stringify({ version: 1, settings: { title: 'X', goalLevel: 30, keep: true }, players: [], other: 1 }));
-  const r = runCli(dir, { OP: 'add', REGION: 'US', NAME: 'Ana', SURNAME: 'Lys', ROSTER_MESSAGE_FILE: '' });
+  const r = runCli(dir, { OP: 'add', REGION: 'US', NAME: 'Ana', SURNAME: 'Lys', LABEL: 'Ana', ROSTER_MESSAGE_FILE: '' });
   assert.equal(r.code, 0, r.stdout);
   assert.equal(r.last, 'MESSAGE=roster: + Ana Lys (US)');
   const saved = JSON.parse(read(dir, 'players.json'));
@@ -318,7 +332,7 @@ test('cli add: without ROSTER_MESSAGE_FILE still works; region is case-insensiti
 
 test('cli remove', () => {
   const dir = freshDir();
-  runCli(dir, { OP: 'add', REGION: 'eu', NAME: 'Joe', SURNAME: 'Gun' });
+  runCli(dir, { OP: 'add', REGION: 'eu', NAME: 'Joe', SURNAME: 'Gun', LABEL: 'Max' });
   const r = runCli(dir, { OP: 'remove', REGION: 'eu', NAME: 'joe', SURNAME: 'gun' });
   assert.equal(r.code, 0);
   assert.equal(r.last, 'MESSAGE=roster: − Joe Gun (EU)');
@@ -354,6 +368,8 @@ test('cli: invalid input gives ::error:: and exit code 2, files untouched', () =
     { OP: 'add', REGION: 'eu', NAME: 'J', SURNAME: 'Gun' },
     { OP: 'add', REGION: 'xx', NAME: 'Joe', SURNAME: 'Gun' },
     { OP: 'add', REGION: 'eu', NAME: 'Joe', SURNAME: '' },
+    { OP: 'add', REGION: 'eu', NAME: 'Joe', SURNAME: 'Gun' },
+    { OP: 'add', REGION: 'eu', NAME: 'Joe', SURNAME: 'Gun', LABEL: '   ' },
     { OP: 'set-edit-key', PAYLOAD: '{}' },
     { OP: 'sync' },
     { OP: '' },
@@ -380,7 +396,7 @@ test('cli: refuses to rewrite an unreadable players.json', () => {
 test('cli: warns about skipped entries and drops them on rewrite', () => {
   const dir = freshDir();
   fs.writeFileSync(path.join(dir, 'players.json'), JSON.stringify({ players: [{ region: 'eu', name: 'x', surname: 'y' }] }));
-  const r = runCli(dir, { OP: 'add', REGION: 'eu', NAME: 'Joe', SURNAME: 'Gun' });
+  const r = runCli(dir, { OP: 'add', REGION: 'eu', NAME: 'Joe', SURNAME: 'Gun', LABEL: 'Max' });
   assert.equal(r.code, 0);
   assert.match(r.stdout, /::warning::Entrée n°1/);
   assert.equal(JSON.parse(read(dir, 'players.json')).players.length, 1);

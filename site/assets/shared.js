@@ -34,7 +34,7 @@ export function playerId(region, name, surname) {
   return `${region}:${slugOf(name, surname)}`;
 }
 
-/** Optional nickname of the human player: control characters removed, at most LABEL_MAX characters. */
+/** First name of the person who plays the character: control characters removed, at most LABEL_MAX characters. */
 export function cleanLabel(value) {
   const s = String(value ?? '')
     .normalize('NFC')

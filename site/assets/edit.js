@@ -38,6 +38,7 @@ const MSG = {
   unreadable: 'Impossible de lire la configuration du site. Vérifie ta connexion.',
   locked: 'La modification n’est pas déverrouillée.',
   duplicate: 'Ce personnage est déjà suivi.',
+  labelMissing: 'Indique le prénom du joueur.',
   generic: 'Une erreur est survenue. Réessaie dans un instant.',
   workflowOff: 'Le suivi automatique est désactivé sur GitHub.',
 };
@@ -78,7 +79,7 @@ function loadPending() {
   try {
     const list = JSON.parse(readStore('sessionStorage', PENDING_STORAGE) ?? '[]');
     return Array.isArray(list)
-      ? list.filter((op) => op && ['add', 'remove', 'sync'].includes(op.kind) && Number.isFinite(op.at))
+      ? list.filter((op) => op && ['add', 'remove', 'label', 'sync'].includes(op.kind) && Number.isFinite(op.at))
       : [];
   } catch {
     return [];
@@ -227,7 +228,8 @@ export function initEdit(ctx) {
 
   /* ----- pending operations ----- */
 
-  const hasPlayer = (id) => Boolean(ctx.getData()?.players?.some((player) => player.id === id));
+  const playerOf = (id) => ctx.getData()?.players?.find((player) => player.id === id) ?? null;
+  const hasPlayer = (id) => Boolean(playerOf(id));
 
   function persist() {
     writeStore('sessionStorage', PENDING_STORAGE, pending.length ? JSON.stringify(pending) : null);
@@ -290,15 +292,18 @@ export function initEdit(ctx) {
   function settle(data) {
     let changed = false;
     for (const op of [...pending]) {
-      const label = `${op.name} ${op.surname}`;
+      const who = `${op.name} ${op.surname}`;
       let message = null;
-      if (op.kind === 'add' && hasPlayer(op.id)) message = `${label} est sur la ligne de départ.`;
-      else if (op.kind === 'remove' && !hasPlayer(op.id)) message = `${label} a été retiré.`;
+      if (op.kind === 'add' && hasPlayer(op.id)) message = `${who} est sur la ligne de départ.`;
+      else if (op.kind === 'remove' && !hasPlayer(op.id)) message = `${who} a été retiré.`;
+      else if (op.kind === 'label' && playerOf(op.id)?.label === op.label) message = `Prénom enregistré pour ${who}.`;
+      // Removed in the meantime: nothing left to announce.
+      else if (op.kind === 'label' && !hasPlayer(op.id)) message = '';
       else if (op.kind === 'sync' && isSyncResolved(op, data.generatedAt)) message = 'Données à jour.';
       else continue;
       drop(op);
       changed = true;
-      if (!op.silent) toast(message, { kind: 'success' });
+      if (message && !op.silent) toast(message, { kind: 'success' });
     }
     if (changed) {
       persist();
@@ -508,14 +513,17 @@ export function initEdit(ctx) {
       class: 'input', type: 'text', autocomplete: 'off', spellcheck: 'false', autocapitalize: 'words', placeholder: 'Gun',
     });
     const regionSelect = h('select', { class: 'select' }, REGIONS.map((code) => h('option', { value: code }, REGION_LABELS[code])));
-    const labelInput = h('input', { class: 'input', type: 'text', autocomplete: 'off', maxlength: LABEL_MAX, placeholder: 'Max' });
+    const labelInput = h('input', {
+      class: 'input', type: 'text', autocomplete: 'off', autocapitalize: 'words', maxlength: LABEL_MAX, placeholder: 'Max', 'aria-required': 'true',
+    });
+    for (const input of [nameInput, surnameInput]) input.setAttribute('aria-required', 'true');
     const storedRegion = readStore('localStorage', REGION_STORAGE);
     regionSelect.value = REGIONS.includes(storedRegion) ? storedRegion : 'eu';
 
     const nameField = field({ label: 'Nom principal', control: nameInput, hint: 'Tu peux aussi coller « Joe Gun » ou le lien de l’armurerie.' });
     const surnameField = field({ label: 'Nom secondaire', control: surnameInput });
     const regionField = field({ label: 'Région', control: regionSelect });
-    const labelField = field({ label: 'Pseudo du joueur (facultatif)', control: labelInput });
+    const labelField = field({ label: 'Prénom du joueur', control: labelInput, hint: 'Pour que tout le monde se reconnaisse.' });
     const armoryLink = h('a', {
       class: 'btn btn--small btn--ghost', target: '_blank', rel: 'noopener noreferrer', hidden: true,
     }, 'Vérifier sur l’armurerie', icon('external', 14));
@@ -532,12 +540,15 @@ export function initEdit(ctx) {
         const id = playerId(region, name, surname);
         if (hasPlayer(id) || pendingAdds().some((add) => add.id === id)) surnameError = MSG.duplicate;
       }
+      const label = cleanLabel(labelInput.value);
+      const labelError = !label && final ? MSG.labelMissing : null;
       nameField.setError(nameError);
       surnameField.setError(surnameError);
+      labelField.setError(labelError);
       const checkable = name && surname && !validateName(name) && !validateName(surname);
       armoryLink.hidden = !checkable;
       if (checkable) armoryLink.href = armorySearchUrl(region, normalizeName(name), normalizeName(surname));
-      return nameError || surnameError ? null : { region, name, surname, label: cleanLabel(labelInput.value) };
+      return nameError || surnameError || labelError ? null : { region, name, surname, label };
     }
 
     function fillFrom(text) {
@@ -556,7 +567,7 @@ export function initEdit(ctx) {
       if (fillFrom(event.clipboardData?.getData('text') ?? '')) event.preventDefault();
     });
     nameInput.addEventListener('change', () => fillFrom(nameInput.value));
-    for (const input of [nameInput, surnameInput]) input.addEventListener('input', () => validate(false));
+    for (const input of [nameInput, surnameInput, labelInput]) input.addEventListener('input', () => validate(false));
     regionSelect.addEventListener('change', () => {
       writeStore('localStorage', REGION_STORAGE, regionSelect.value);
       validate(false);
@@ -575,13 +586,13 @@ export function initEdit(ctx) {
       async onSubmit() {
         const entry = validate(true);
         if (!entry) {
-          (nameField.control.hasAttribute('aria-invalid') ? nameInput : surnameInput).focus();
+          [nameInput, surnameInput, labelInput].find((input) => input.hasAttribute('aria-invalid'))?.focus();
           return;
         }
         const name = normalizeName(entry.name);
         const surname = normalizeName(entry.surname);
         await record('add', {
-          op: 'add', region: entry.region, name, surname, label: entry.label ?? '',
+          op: 'add', region: entry.region, name, surname, label: entry.label,
         }, { id: playerId(entry.region, name, surname), region: entry.region, name, surname, label: entry.label });
         form.modal.close();
         toast('Ajout demandé.', { kind: 'success' });
@@ -607,6 +618,41 @@ export function initEdit(ctx) {
     } catch (error) {
       toast(messageOf(error), { kind: 'error' });
     }
+    return undefined;
+  }
+
+  /** Sets or changes the first name of whoever plays an already tracked character. */
+  function editLabel(player) {
+    if (!isUnlocked()) return openEdit();
+    const current = pendingLabels().get(player.id) ?? player.label ?? '';
+    const input = h('input', {
+      class: 'input', type: 'text', autocomplete: 'off', autocapitalize: 'words', maxlength: LABEL_MAX, placeholder: 'Max', autofocus: true, 'aria-required': 'true', value: current,
+    });
+    const labelField = field({ label: 'Prénom du joueur', control: input, hint: 'Pour que tout le monde se reconnaisse.' });
+    input.addEventListener('input', () => { if (cleanLabel(input.value)) labelField.setError(null); });
+    const form = formDialog({
+      title: current ? 'Modifier le prénom' : 'Ajouter le prénom',
+      body: [workflowNotice(), h('p', null, `Qui joue ${fullName(player)} ?`), labelField.el],
+      submitLabel: 'Enregistrer',
+      async onSubmit() {
+        const label = cleanLabel(input.value);
+        if (!label) {
+          labelField.setError(MSG.labelMissing);
+          input.focus();
+          return;
+        }
+        if (label === current) {
+          form.modal.close();
+          return;
+        }
+        // The workflow's "add" of a tracked character only updates its first name.
+        await record('label', {
+          op: 'add', region: player.region, name: player.name, surname: player.surname, label,
+        }, { id: player.id, region: player.region, name: player.name, surname: player.surname, label });
+        form.modal.close();
+        toast('Prénom demandé.', { kind: 'success' });
+      },
+    });
     return undefined;
   }
 
@@ -780,6 +826,11 @@ export function initEdit(ctx) {
 
   const pendingRemovals = () => new Set(pending.filter((op) => op.kind === 'remove' && hasPlayer(op.id)).map((op) => op.id));
 
+  /** First names asked for but not in the data yet, by player id (the latest request wins). */
+  const pendingLabels = () => new Map(pending
+    .filter((op) => op.kind === 'label' && hasPlayer(op.id) && playerOf(op.id).label !== op.label)
+    .map((op) => [op.id, op.label]));
+
   // Start: consume the key from the URL, learn whether the site has an edit link, unlock silently.
   const fragment = consumeFragmentKey();
   const urlKey = fragment.key;
@@ -800,10 +851,12 @@ export function initEdit(ctx) {
     isUnlocked,
     pendingAdds,
     pendingRemovals,
+    pendingLabels,
     openEdit,
     openAdd,
     openSetup,
     requestRemove,
+    editLabel,
     requestSync,
     lock,
     shareLink: () => (isUnlocked() && (nextKey ?? key) ? `${location.origin}${location.pathname}#k=${nextKey ?? key}` : null),

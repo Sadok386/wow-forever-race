@@ -39,7 +39,7 @@ on:
         required: false
         default: ''
       label:
-        description: 'Pseudo du joueur (facultatif)'
+        description: 'Prénom du joueur (obligatoire pour ajouter un personnage)'
         type: string
         required: false
         default: ''

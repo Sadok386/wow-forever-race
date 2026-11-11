@@ -5,7 +5,9 @@ import { armoryUrl } from '../shared.js';
 import { fractionalLevel, levelsGained, trackRatio, xpPercent } from '../model.js';
 import { dateTime, fullName, ordinal } from '../format.js';
 import { avatar, initialsDisc } from './media.js';
-import { identityNodes, stateNote, tint } from './identity.js';
+import {
+  identityNodes, playedByNodes, stateNote, tint,
+} from './identity.js';
 import { timeEl } from './time.js';
 
 const TICK_EVERY = 10;
@@ -132,6 +134,7 @@ export function renderLane(player, rank, ctx) {
   const ratio = trackRatio(fractionalLevel(player.level, player.xp, xpTable, goalLevel), goalLevel);
   const gained = levelsGained(history?.series?.[player.id], nowMs / 1000 - DAY_SECONDS);
   const line = identityNodes(player);
+  const playedBy = playedByNodes(player, ctx, { leaving });
   const classes = ['lane', rank === 1 && 'lane--first', rank === 1 && 'ornate', finished && 'lane--finished', leaving && 'lane--leaving']
     .filter(Boolean).join(' ');
 
@@ -153,7 +156,7 @@ export function renderLane(player, rank, ctx) {
             dataset: { key: `lane:${player.id}:open` },
             on: { click: () => ctx.openSheet(player) },
           }, fullName(player))),
-          player.label ? h('p', { class: 'lane__by' }, `joué par ${player.label}`) : null,
+          playedBy ? h('p', { class: 'lane__by' }, playedBy) : null,
           line.length ? h('p', { class: 'lane__line' }, line) : null,
           player.guild?.name ? h('p', { class: 'lane__guild' }, `<${player.guild.name}>`) : null,
         ),

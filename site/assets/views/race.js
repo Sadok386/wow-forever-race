@@ -3,7 +3,7 @@ import { h } from '../dom.js';
 import { armorySearchUrl } from '../shared.js';
 import { fullName } from '../format.js';
 import { renderGhost, renderLane } from './lane.js';
-import { stateNote } from './identity.js';
+import { playedByNodes, stateNote } from './identity.js';
 
 export function renderRace(ctx, ranked) {
   const lanes = [
@@ -21,6 +21,7 @@ export function renderRace(ctx, ranked) {
 function waitingRow(player, ctx) {
   const leaving = ctx.removals.has(player.id);
   const note = leaving ? 'Retrait en cours…' : stateNote(player);
+  const playedBy = playedByNodes(player, ctx, { leaving, keyPrefix: 'wait' });
   return h(
     'li',
     { class: leaving ? 'waiting__row lane--leaving' : 'waiting__row' },
@@ -28,7 +29,7 @@ function waitingRow(player, ctx) {
       'div',
       { class: 'waiting__who' },
       h('span', { class: 'waiting__name' }, fullName(player)),
-      player.label ? h('span', { class: 'muted' }, ` · joué par ${player.label}`) : null,
+      playedBy ? h('span', { class: 'muted' }, ' · ', playedBy) : null,
       note ? h('span', { class: 'lane__note' }, ` · ${note}`) : null,
     ),
     h(
