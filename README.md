@@ -1,6 +1,6 @@
-# Course au niveau 60 — WoW Forever
+# RUSH 60 — WoW Forever
 
-Un petit site pour suivre une course de leveling entre amis sur **World of Warcraft: Forever** : classement en direct, courbe de progression, derniers niveaux gagnés, fiche de chaque personnage (équipement, statistiques, métiers, talents) et lien vers l'armurerie officielle.
+Un petit site pour suivre le rush vers le niveau 60 entre amis sur **World of Warcraft: Forever** : classement en direct, courbe de progression, derniers niveaux gagnés, fiche de chaque personnage (équipement, statistiques, métiers, talents) et lien vers l'armurerie officielle. À la première visite, une intro vidéo s'affiche une seule fois (bouton « Passer ») ; « Rejouer l'intro », sous le titre, la relance.
 
 Il est hébergé gratuitement sur GitHub Pages. Une tâche GitHub interroge l'API officielle de Blizzard toutes les 15 minutes environ et republie le site. Tes amis ajoutent ou retirent un personnage directement depuis le site, sans compte GitHub, grâce à un lien de modification que tu leur envoies.
 
@@ -19,7 +19,7 @@ Sur GitHub, crée un dépôt **public** vide, par exemple `wow-forever-race`, sa
 ```bash
 git init -b main
 git add -A
-git commit -m "Site de suivi de la course"
+git commit -m "Site RUSH 60"
 git remote add origin https://github.com/TON-COMPTE/wow-forever-race.git
 git push -u origin main
 ```
@@ -79,7 +79,7 @@ Dans `players.json`, rubrique `settings` :
 | Réglage | Effet |
 | --- | --- |
 | `title` | Titre affiché en haut du site. |
-| `goalLevel` | Niveau d'arrivée de la course (60 par défaut). |
+| `goalLevel` | Niveau visé (60 par défaut). |
 | `guilds` | Guildes supplémentaires à lire pour les personnages sous le niveau 10, par exemple `[{ "region": "eu", "slug": "les-copains" }]`. Le `slug` est le nom de la guilde en minuscules, les espaces remplacés par des tirets. |
 | `xpTable` | `false` pour masquer les barres d'XP, ou une liste de 59 nombres pour remplacer la table. |
 

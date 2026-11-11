@@ -29,17 +29,17 @@ export function renderEmptyRoster({ edit }) {
   let text;
   let button;
   if (edit.isUnlocked()) {
-    text = 'Ajoute le premier personnage pour lancer la course.';
+    text = 'Ajoute le premier personnage pour lancer le rush.';
     button = h('button', { class: 'btn btn--primary', type: 'button', dataset: { key: 'add-empty' }, on: { click: () => edit.openAdd() } }, icon('plus', 16), 'Ajouter un personnage');
   } else if (edit.isConfigured()) {
     text = 'Déverrouille la modification avec ton lien pour ajouter les premiers personnages.';
     button = h('button', { class: 'btn', type: 'button', dataset: { key: 'unlock-empty' }, on: { click: () => edit.openEdit() } }, icon('lock', 16), 'Modifier la liste');
   } else {
-    text = 'Commence par activer le lien de modification, puis ajoute tes amis à la course.';
+    text = 'Commence par activer le lien de modification, puis ajoute tes amis au rush.';
     button = h('button', { class: 'btn btn--primary', type: 'button', dataset: { key: 'setup-empty' }, on: { click: () => edit.openEdit() } }, 'Configurer le site');
   }
   return card(
-    h('h2', { class: 'empty__title' }, 'Personne sur la ligne de départ'),
+    h('h2', { class: 'empty__title' }, 'Le rush n’a pas encore commencé'),
     h('p', null, text),
     h('p', null, button),
   );

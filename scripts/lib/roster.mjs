@@ -8,7 +8,7 @@ import {
   validateName,
 } from '../../site/assets/shared.js';
 
-export const DEFAULT_SETTINGS = { title: 'Course au niveau 60', goalLevel: 60 };
+export const DEFAULT_SETTINGS = { title: 'RUSH 60', goalLevel: 60 };
 
 /** The message is French and meant to be shown to the person who triggered the operation. */
 export class RosterError extends Error {}

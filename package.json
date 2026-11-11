@@ -2,7 +2,7 @@
   "name": "wow-forever-race",
   "version": "1.0.0",
   "private": true,
-  "description": "Suivi d'une course au niveau 60 sur WoW Forever, hébergé sur GitHub Pages",
+  "description": "RUSH 60 : suivi du rush vers le niveau 60 entre amis sur WoW Forever, hébergé sur GitHub Pages",
   "type": "module",
   "engines": {
     "node": ">=20"

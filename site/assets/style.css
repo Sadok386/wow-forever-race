@@ -868,6 +868,11 @@ summary.btn::-webkit-details-marker {
   color: var(--muted);
 }
 
+/* "Rejouer l'intro": a quiet button under the summary, its icon lined up with the text above. */
+.site-header__replay {
+  margin-left: calc(-1 * var(--s3));
+}
+
 .site-header__tools {
   display: flex;
   flex-wrap: wrap;

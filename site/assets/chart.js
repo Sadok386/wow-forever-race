@@ -368,7 +368,7 @@ export function mountChart(container, initialProps) {
     grid.append(
       svgEl('line', { class: 'chart__finish', x1: box.l, x2: right, y1: yGoal, y2: yGoal }),
       svgEl('text', { class: 'chart__finish-label', x: box.l - 6, y: yGoal + 4, 'text-anchor': 'end' }, String(goal)),
-      svgEl('text', { class: 'chart__finish-label', x: box.l + 6, y: yGoal - 6 }, 'Arrivée'),
+      svgEl('text', { class: 'chart__finish-label', x: box.l + 6, y: yGoal - 6 }, 'Objectif'),
     );
 
     const marks = svgEl('g');

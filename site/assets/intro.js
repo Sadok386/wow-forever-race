@@ -1,5 +1,6 @@
-// The intro: a video shown once per browser, full page on black, before the race. Watching it to
-// the end, "Passer" or the Escape key close it for good (remembered in localStorage).
+// The intro: a video shown once per browser, full page on black, before the ranking. Watching it
+// to the end, "Passer" or the Escape key close it for good (remembered in localStorage); the
+// "Rejouer l'intro" button under the title plays it again on request.
 //
 // Browsers refuse to start a video with sound before the visitor has clicked on the page, so the
 // intro opens on a splash with a play button; when the browser does allow it, the video starts
@@ -30,7 +31,18 @@ function storage() {
 export function showIntro() {
   const store = storage();
   if (!store || store.getItem(SEEN_KEY) === VERSION) return Promise.resolve(false);
+  return openIntro(store);
+}
 
+/**
+ * "Rejouer l'intro": shows it again whatever was remembered. Called from a click, which lets the
+ * browser start it with the sound at once, without the splash.
+ */
+export function replayIntro() {
+  return openIntro(storage());
+}
+
+function openIntro(store) {
   return new Promise((resolve) => {
     let closing = false;
 
@@ -46,13 +58,13 @@ export function showIntro() {
     const skip = h('button', { class: 'btn intro__skip', type: 'button' }, 'Passer', icon('skip', 16));
     const el = h(
       'dialog',
-      { class: 'intro', 'aria-label': 'Intro de la course' },
+      { class: 'intro', 'aria-label': 'Intro du RUSH 60' },
       video,
       h(
         'div',
         { class: 'intro__splash' },
         h('p', { class: 'site-header__eyebrow' }, 'WoW Forever'),
-        h('p', { class: 'site-header__title intro__title' }, 'Que la course commence'),
+        h('p', { class: 'site-header__title intro__title' }, 'RUSH 60'),
         h('div', { class: 'divider', 'aria-hidden': 'true' }),
         play,
         h('p', { class: 'intro__meta' }, `${LENGTH_LABEL} · avec le son`),
@@ -64,7 +76,7 @@ export function showIntro() {
     function finish(remember) {
       if (closing) return;
       closing = true;
-      if (remember) {
+      if (remember && store) {
         try {
           store.setItem(SEEN_KEY, VERSION);
         } catch {

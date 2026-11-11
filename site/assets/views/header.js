@@ -66,17 +66,17 @@ function editControls(edit) {
   ];
 }
 
-/** "7 coureurs · en tête : Corwin Maelis, niveau 44 · arrivée au niveau 60 · 2 arrivés"; null without a level. */
+/** "7 personnages · en tête : Corwin Maelis, niveau 44 · objectif niveau 60 · 2 l’ont atteint"; null without a level. */
 function raceSummary({ data, goalLevel }) {
   const { ranked } = rankPlayers(data?.players ?? [], goalLevel);
   if (!ranked.length) return null;
   const leader = ranked[0];
   const finishers = ranked.filter((player) => player.level >= goalLevel).length;
   return [
-    ranked.length === 1 ? '1 coureur' : `${ranked.length} coureurs`,
+    ranked.length === 1 ? '1 personnage' : `${ranked.length} personnages`,
     `en tête : ${fullName(leader)}, niveau ${leader.level}`,
-    `arrivée au niveau ${goalLevel}`,
-    finishers ? (finishers === 1 ? '1 arrivé' : `${finishers} arrivés`) : null,
+    `objectif niveau ${goalLevel}`,
+    finishers ? (finishers === 1 ? '1 l’a atteint' : `${finishers} l’ont atteint`) : null,
   ].filter(Boolean).join(' · ');
 }
 
@@ -88,9 +88,15 @@ export function renderHeader(ctx) {
       'div',
       { class: 'site-header__banner' },
       h('p', { class: 'site-header__eyebrow' }, 'WoW Forever'),
-      h('h1', { class: 'site-header__title' }, data?.settings?.title || 'Course au niveau 60'),
+      h('h1', { class: 'site-header__title' }, data?.settings?.title || 'RUSH 60'),
       h('div', { class: 'divider', 'aria-hidden': 'true' }),
       summary ? h('p', { class: 'site-header__summary' }, summary) : null,
+      h('p', { class: 'site-header__replay' }, h('button', {
+        class: 'btn btn--small btn--ghost',
+        type: 'button',
+        dataset: { key: 'replay-intro' },
+        on: { click: () => ctx.replayIntro() },
+      }, icon('play', 14), 'Rejouer l’intro')),
     ),
     h(
       'div',

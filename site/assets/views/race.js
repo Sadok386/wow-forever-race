@@ -1,4 +1,4 @@
-// "La course" (lanes) and "En attente" (characters without a level yet).
+// "Le classement" (lanes) and "En attente" (characters without a level yet).
 import { h } from '../dom.js';
 import { armorySearchUrl } from '../shared.js';
 import { fullName } from '../format.js';
@@ -11,10 +11,10 @@ export function renderRace(ctx, ranked) {
     ...ctx.edit.pendingAdds().map(renderGhost),
   ];
   return [
-    h('h2', { class: 'section__title', id: 'race-title' }, 'La course'),
+    h('h2', { class: 'section__title', id: 'race-title' }, 'Le classement'),
     lanes.length
       ? h('ol', { class: 'lanes' }, lanes)
-      : h('p', { class: 'muted' }, 'Personne n’a encore de niveau connu : la course démarre dès qu’un personnage apparaît.'),
+      : h('p', { class: 'muted' }, 'Personne n’a encore de niveau connu : le classement démarre dès qu’un personnage apparaît.'),
   ];
 }
 

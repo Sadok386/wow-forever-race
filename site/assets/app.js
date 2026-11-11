@@ -1,7 +1,7 @@
 // Entry point: owns the state, loads the data, renders the sections and wires the edit module.
 import { focusByKey, focusKey, toast } from './dom.js';
 import { initEdit } from './edit.js';
-import { showIntro } from './intro.js';
+import { replayIntro, showIntro } from './intro.js';
 import { mountChart } from './chart.js';
 import { chartSeries, rankPlayers } from './model.js';
 import { fullName } from './format.js';
@@ -129,7 +129,19 @@ function viewContext() {
     nowMs: Date.now(),
     openSheet,
     refresh,
+    replayIntro: replay,
   };
+}
+
+/** "Rejouer l'intro" under the title; a second click while it plays does nothing. */
+async function replay() {
+  if (introShowing) return;
+  introShowing = true;
+  try {
+    await replayIntro();
+  } finally {
+    introShowing = false;
+  }
 }
 
 function renderChart(ctx, ranked) {
@@ -166,7 +178,7 @@ function render() {
   const rosterEmpty = ctx.data !== null && players.length === 0 && pendingAdds.length === 0;
   const showRace = players.length > 0 || pendingAdds.length > 0;
 
-  document.title = `${ctx.data?.settings?.title || 'Course au niveau 60'} · WoW Forever`;
+  document.title = `${ctx.data?.settings?.title || 'RUSH 60'} · WoW Forever`;
   fill(slots.header, renderHeader(ctx));
   fill(slots.notices, renderBanner(ctx));
   fill(slots.state, renderStatePanel(ctx) ?? (rosterEmpty ? [renderEmptyRoster(ctx)] : null));

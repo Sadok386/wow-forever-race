@@ -294,7 +294,7 @@ export function initEdit(ctx) {
     for (const op of [...pending]) {
       const who = `${op.name} ${op.surname}`;
       let message = null;
-      if (op.kind === 'add' && hasPlayer(op.id)) message = `${who} est sur la ligne de départ.`;
+      if (op.kind === 'add' && hasPlayer(op.id)) message = `${who} rejoint le rush.`;
       else if (op.kind === 'remove' && !hasPlayer(op.id)) message = `${who} a été retiré.`;
       else if (op.kind === 'label' && playerOf(op.id)?.label === op.label) message = `Prénom enregistré pour ${who}.`;
       // Removed in the meantime: nothing left to announce.

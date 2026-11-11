@@ -46,7 +46,7 @@ const DEMO_PLAYERS = [
  * mean nothing to the fictional players.
  */
 function seedRoster(nowIso) {
-  let settings = { title: 'Course au niveau 60', goalLevel: 60 };
+  let settings = { title: 'RUSH 60', goalLevel: 60 };
   try {
     const parsed = JSON.parse(fs.readFileSync(path.join(ROOT, 'players.json'), 'utf8'));
     if (parsed?.settings && typeof parsed.settings === 'object' && !Array.isArray(parsed.settings)) {

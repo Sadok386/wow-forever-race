@@ -79,13 +79,13 @@ function rankBadge(rank) {
   );
 }
 
-function meta(player, rank, finished, gained, leaving) {
+function meta(player, rank, goalLevel, finished, gained, leaving) {
   const note = leaving ? 'Retrait en cours…' : stateNote(player);
   return h(
     'div',
     { class: 'lane__meta' },
     finished
-      ? h('span', { class: 'lane__finish' }, icon('flag', 14), `Arrivé ${ordinal(rank)}${player.goalAt ? ` · ${dateTime(player.goalAt)}` : ''}`)
+      ? h('span', { class: 'lane__finish' }, icon('flag', 14), `Niveau ${goalLevel} atteint · ${ordinal(rank)}${player.goalAt ? ` · ${dateTime(player.goalAt)}` : ''}`)
       : null,
     gained > 0 ? h('span', { class: 'lane__gain' }, `+${gained} niv. en 24 h`) : null,
     timeEl(player.lastLoginAt, { prefix: 'déconnecté ' }),
@@ -163,7 +163,7 @@ export function renderLane(player, rank, ctx) {
       ),
       levelBlock(player),
       h('div', { class: 'lane__bars' }, track(player, ratio, goalLevel), xpBar(xpPercent(player, xpTable), finished)),
-      meta(player, rank, finished, gained, leaving),
+      meta(player, rank, goalLevel, finished, gained, leaving),
       actions(player, ctx, leaving),
     ),
     player,
