@@ -11,7 +11,7 @@ const SEEN_KEY = 'wft.introSeen';
 // Change it when the video changes, so that everyone sees the new one once.
 const VERSION = '1';
 const SOURCE = 'media/intro.mp4';
-const LENGTH_LABEL = '1 min 42';
+const LENGTH_LABEL = '2 min 45';
 const FADE_MS = 500;
 
 /** The intro must be shown once only: without working storage it is not shown at all. */
