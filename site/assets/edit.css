@@ -1,0 +1,62 @@
+/* Edit dialogs. Only what the kit in style.css does not already provide. */
+
+/* Two fields side by side on a wide dialog, stacked on a phone. Top-aligned so a hint under one
+   field does not push the other one down. */
+.edit__pair {
+  align-items: flex-start;
+}
+
+.edit__pair > .field {
+  flex: 1 1 200px;
+  min-width: 0;
+}
+
+.edit__steps {
+  padding-left: var(--s5);
+  list-style: decimal;
+}
+
+.edit__steps > li {
+  padding-left: var(--s1);
+}
+
+.edit__steps > li::marker {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.edit__steps > li > * + * {
+  margin-top: var(--s2);
+}
+
+.edit__share {
+  flex-wrap: nowrap;
+}
+
+.edit__link {
+  flex: 1;
+  min-width: 0;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 480px) {
+  .edit__share {
+    flex-wrap: wrap;
+  }
+}
+
+.field input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: var(--s2);
+  vertical-align: -3px;
+}
+
+.dialog .notice {
+  box-shadow: 0 0 0 1px #000, var(--inner-light);
+}
+
+.dialog .notice.stack .btn {
+  align-self: flex-start;
+}

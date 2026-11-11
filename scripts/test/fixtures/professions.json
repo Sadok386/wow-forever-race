@@ -1,0 +1,39 @@
+{
+  "_links": { "self": { "href": "https://eu.api.blizzard.com/profile/wow/character/aldric-ventor/professions?namespace=profile-forever-eu" } },
+  "character": {
+    "key": { "href": "https://eu.api.blizzard.com/profile/wow/character/aldric-ventor?namespace=profile-forever-eu" },
+    "name": "Aldric",
+    "id": 4242017,
+    "surname": "Ventor",
+    "slug": "aldric-ventor"
+  },
+  "primaries": [
+    {
+      "profession": { "key": { "href": "https://eu.api.blizzard.com/data/wow/profession/186?namespace=static-1.60.1_70399-forever-eu" }, "name": "Minage", "id": 186 },
+      "tiers": [
+        { "skill_points": 116, "max_skill_points": 150, "tier": { "name": "Minage", "id": 2946 } }
+      ]
+    },
+    {
+      "profession": { "key": { "href": "https://eu.api.blizzard.com/data/wow/profession/164?namespace=static-1.60.1_70399-forever-eu" }, "name": "Forge", "id": 164 },
+      "tiers": [
+        {
+          "skill_points": 98,
+          "max_skill_points": 150,
+          "tier": { "name": "Forge", "id": 2944 },
+          "known_recipes": [
+            { "key": { "href": "https://eu.api.blizzard.com/data/wow/recipe/2660?namespace=static-1.60.1_70399-forever-eu" }, "name": "Pierre à aiguiser brute", "id": 2660 }
+          ]
+        }
+      ]
+    }
+  ],
+  "secondaries": [
+    {
+      "profession": { "key": { "href": "https://eu.api.blizzard.com/data/wow/profession/129?namespace=static-1.60.1_70399-forever-eu" }, "name": "Secourisme", "id": 129 },
+      "tiers": [
+        { "skill_points": 80, "max_skill_points": 150, "tier": { "name": "Secourisme", "id": 2540 } }
+      ]
+    }
+  ]
+}

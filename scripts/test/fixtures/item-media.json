@@ -1,0 +1,7 @@
+{
+  "_links": { "self": { "href": "https://eu.api.blizzard.com/data/wow/media/item/2316?namespace=static-1.60.1_70399-forever-eu" } },
+  "assets": [
+    { "key": "icon", "value": "https://render.worldofwarcraft.com/forever-eu/icons/56/133762.jpg", "file_data_id": 133762 }
+  ],
+  "id": 2316
+}

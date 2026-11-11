@@ -1,0 +1,42 @@
+{
+  "_links": { "self": { "href": "https://eu.api.blizzard.com/profile/wow/character/aldric-ventor/specializations?namespace=profile-forever-eu" } },
+  "character": {
+    "key": { "href": "https://eu.api.blizzard.com/profile/wow/character/aldric-ventor?namespace=profile-forever-eu" },
+    "name": "Aldric",
+    "id": 4242017,
+    "surname": "Ventor",
+    "slug": "aldric-ventor"
+  },
+  "specialization_groups": [
+    {
+      "is_active": true,
+      "specializations": [
+        {
+          "specialization": { "key": { "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/66?namespace=static-1.60.1_70399-forever-eu" }, "name": "Protection", "id": 66 },
+          "specialization_name": "Protection",
+          "spent_points": 5,
+          "talents": [
+            {
+              "talent": { "name": "Redoute", "id": 1421 },
+              "spell_tooltip": { "spell": { "name": "Redoute", "id": 20137 }, "description": "Augmente vos chances de bloquer.", "cast_time": "Passif" },
+              "talent_rank": 5
+            }
+          ]
+        },
+        {
+          "specialization": { "key": { "href": "https://eu.api.blizzard.com/data/wow/playable-specialization/70?namespace=static-1.60.1_70399-forever-eu" }, "name": "Vindicte", "id": 70 },
+          "specialization_name": "Vindicte",
+          "spent_points": 13,
+          "talents": [
+            {
+              "talent": { "name": "Bénédiction de puissance améliorée", "id": 1401 },
+              "spell_tooltip": { "spell": { "name": "Bénédiction de puissance améliorée", "id": 20045 }, "description": "Augmente la puissance d'attaque conférée.", "cast_time": "Passif" },
+              "talent_rank": 5
+            }
+          ]
+        }
+      ]
+    },
+    { "is_active": false }
+  ]
+}

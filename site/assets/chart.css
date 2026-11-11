@@ -1,0 +1,188 @@
+/* Progression chart. Colours come from the tokens defined in style.css. The panel is a frame;
+   the controls are small plates; the read-out is a game tooltip. */
+
+.chart {
+  display: grid;
+  gap: var(--s3);
+  min-width: 0;
+}
+
+.chart__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s3) var(--s4);
+}
+
+.chart__range {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  background: var(--well);
+  border: 1px solid #000;
+  border-radius: var(--radius-s);
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+/* The range buttons and legend toggles are .btn.btn--small plates (see style.css); only their
+   pressed state, and the "hidden" state of a toggle, are drawn here. */
+.chart__range-btn[aria-pressed="true"],
+.chart__toggle[aria-pressed="true"] {
+  background: var(--trough);
+  box-shadow: inset 0 0 0 1px var(--accent-3), inset 0 2px 6px rgb(0 0 0 / 0.7);
+  color: var(--accent);
+  text-shadow: var(--shadow-text);
+}
+.chart__range-btn[aria-pressed="true"]:hover,
+.chart__toggle[aria-pressed="true"]:hover {
+  background: var(--trough);
+  box-shadow: inset 0 0 0 1px var(--accent-2), inset 0 2px 6px rgb(0 0 0 / 0.7);
+}
+.chart__range-btn[aria-pressed="true"]:active,
+.chart__toggle[aria-pressed="true"]:active {
+  box-shadow: inset 0 0 0 1px var(--accent-3), inset 0 3px 8px rgb(0 0 0 / 0.85);
+}
+
+/* The ring of a focused toggle is 4px wide: the legend scrolls, so it needs that room inside its
+   padding (the negative margin keeps the layout where it was). */
+.chart__legend {
+  display: flex;
+  flex: 1 1 240px;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s2);
+  max-height: 8rem;
+  margin: -3px;
+  padding: 5px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+/* Hidden character: the name stays fully readable (struck through), the swatch is dimmed and the
+   plate is gone. No opacity on the button. */
+.chart__toggle[aria-pressed="false"] {
+  background: none;
+  box-shadow: inset 0 0 0 1px var(--border-soft);
+  color: var(--muted);
+  text-decoration: line-through;
+  text-shadow: none;
+}
+.chart__toggle[aria-pressed="false"]:hover {
+  background: var(--plate-hot);
+  box-shadow: inset 0 0 0 1px var(--accent-2);
+  color: var(--accent);
+}
+.chart__toggle[aria-pressed="false"] .chart__swatch {
+  opacity: 0.4;
+}
+
+/* A short line segment: the same shape as what it identifies, dashed when the line is. */
+.chart__swatch {
+  display: inline-block;
+  flex: none;
+  width: 16px;
+  height: 0;
+  border-top: 3px solid var(--c, currentColor);
+  border-radius: 2px;
+}
+.chart__swatch.is-dashed { border-top-style: dashed; }
+
+.chart__plot {
+  position: relative;
+  min-width: 0;
+  /* Horizontal drags scrub the read-out; vertical ones still scroll the page. */
+  touch-action: pan-y;
+}
+.chart__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart__grid { stroke: var(--border-soft); stroke-width: 1; }
+.chart__axis { stroke: var(--border); stroke-width: 1; }
+.chart__tick {
+  font-size: 0.8125rem;
+  fill: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.chart__finish { stroke: var(--accent-2); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.chart__finish-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  fill: var(--accent);
+}
+.chart__line {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.chart__ext { stroke-opacity: 0.65; }
+.chart__dot,
+.chart__hit {
+  stroke: var(--surface);
+  stroke-width: 1.5;
+}
+.chart__hit { stroke-width: 2; }
+.chart__label { font-size: 0.8125rem; fill: var(--text); }
+.chart__note { font-size: 0.8125rem; fill: var(--muted); text-anchor: middle; }
+.chart__cursor {
+  stroke: var(--muted);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+/* The game tooltip. */
+.chart__readout {
+  position: absolute;
+  top: var(--s2);
+  left: var(--x, 0);
+  z-index: 1;
+  display: grid;
+  gap: var(--s2);
+  width: max-content;
+  min-width: 150px;
+  max-width: min(260px, calc(100% - 16px));
+  padding: var(--s2) var(--s3);
+  font-size: 0.8125rem;
+  background: var(--tooltip-bg);
+  border: 1px solid var(--tooltip-border);
+  border-radius: 5px;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.55);
+  pointer-events: none;
+  transform: translateX(12px);
+}
+.chart__readout[data-side="left"] {
+  left: auto;
+  right: calc(100% - var(--x, 0px));
+  transform: translateX(-12px);
+}
+.chart__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: var(--s2);
+}
+.chart__row-name {
+  overflow: hidden;
+  color: var(--c, var(--text));
+  font-weight: 600;
+  text-overflow: ellipsis;
+  text-shadow: var(--shadow-text);
+  white-space: nowrap;
+}
+.chart__row-level {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  text-shadow: var(--shadow-text);
+}
+.chart__row-date { grid-column: 2 / 4; }
+
+.chart__empty {
+  margin: 0;
+  padding: var(--s5) var(--s4);
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}

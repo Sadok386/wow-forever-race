@@ -1,0 +1,16 @@
+{
+  "_links": { "self": { "href": "https://eu.api.blizzard.com/profile/wow/character/aldric-ventor/character-media?namespace=profile-forever-eu" } },
+  "character": {
+    "key": { "href": "https://eu.api.blizzard.com/profile/wow/character/aldric-ventor?namespace=profile-forever-eu" },
+    "name": "Aldric",
+    "id": 4242017,
+    "surname": "Ventor",
+    "slug": "aldric-ventor"
+  },
+  "assets": [
+    { "key": "main-raw", "value": "https://render.worldofwarcraft.com/forever-eu/character/97/4242017-main-raw.png" },
+    { "key": "main-sd-raw", "value": "https://render.worldofwarcraft.com/forever-eu/character/97/4242017-main-sd-raw.png" },
+    { "key": "avatar", "value": "https://render.worldofwarcraft.com/forever-eu/character/97/4242017-avatar.jpg" },
+    { "key": "avatar-sd", "value": "https://render.worldofwarcraft.com/forever-eu/character/97/4242017-avatar-sd.jpg" }
+  ]
+}

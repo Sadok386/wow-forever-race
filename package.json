@@ -1,0 +1,15 @@
+{
+  "name": "wow-forever-race",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Suivi d'une course au niveau 60 sur WoW Forever, hébergé sur GitHub Pages",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "dev": "node scripts/dev-server.mjs",
+    "sync": "node scripts/sync.mjs"
+  }
+}

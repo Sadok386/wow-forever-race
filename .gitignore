@@ -1,0 +1,9 @@
+# Données générées : elles vivent sur la branche « data », pas sur main
+site/data/
+
+# Bac à sable du serveur de démonstration local
+.dev/
+
+node_modules/
+.claude/
+*.log

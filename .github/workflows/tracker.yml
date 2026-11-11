@@ -1,0 +1,166 @@
+name: Tracker
+run-name: >-
+  ${{ github.event_name == 'workflow_dispatch'
+      && format('{0} {1} {2}', inputs.op, inputs.name, inputs.surname)
+      || (github.event_name == 'schedule' && 'Synchronisation planifiée' || 'Publication du site') }}
+
+on:
+  schedule:
+    # Toutes les 15 minutes, en évitant le début de chaque heure (GitHub y retarde souvent les exécutions planifiées).
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      op:
+        description: 'Action'
+        type: choice
+        default: sync
+        options:
+          - sync
+          - add
+          - remove
+          - set-edit-key
+      region:
+        description: 'Région du personnage'
+        type: choice
+        default: eu
+        options:
+          - eu
+          - us
+          - kr
+          - tw
+      name:
+        description: 'Nom principal du personnage (pour add / remove)'
+        type: string
+        required: false
+        default: ''
+      surname:
+        description: 'Nom secondaire du personnage (pour add / remove)'
+        type: string
+        required: false
+        default: ''
+      label:
+        description: 'Pseudo du joueur (facultatif)'
+        type: string
+        required: false
+        default: ''
+      payload:
+        description: 'Réservé au site (lien de modification)'
+        type: string
+        required: false
+        default: ''
+  push:
+    branches:
+      - main
+    paths:
+      - 'site/**'
+      - 'scripts/**'
+      - 'players.json'
+      - '.github/workflows/tracker.yml'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Une seule exécution à la fois ; les suivantes attendent leur tour et aucune n'est annulée.
+concurrency:
+  group: tracker
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  tracker:
+    name: Mettre à jour et publier
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      # « ref » force la pointe actuelle de la branche : une exécution restée en file d'attente
+      # doit voir les changements enregistrés par celles qui l'ont précédée.
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Identité Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # Les valeurs saisies n'arrivent au script que par des variables d'environnement,
+      # jamais insérées dans le texte d'une commande.
+      - name: Modifier la liste des personnages
+        if: github.event_name == 'workflow_dispatch' && inputs.op != 'sync'
+        env:
+          OP: ${{ inputs.op }}
+          REGION: ${{ inputs.region }}
+          NAME: ${{ inputs.name }}
+          SURNAME: ${{ inputs.surname }}
+          LABEL: ${{ inputs.label }}
+          PAYLOAD: ${{ inputs.payload }}
+          ROSTER_MESSAGE_FILE: ${{ runner.temp }}/roster-message.txt
+        run: |
+          set -euo pipefail
+          node scripts/roster.mjs
+          git add -A -- players.json site
+          if git diff --cached --quiet; then
+            echo "Aucun changement à enregistrer."
+          else
+            git commit --quiet -F "$ROSTER_MESSAGE_FILE"
+            git push --quiet origin "HEAD:${GITHUB_REF_NAME}" || {
+              git pull --quiet --rebase origin "${GITHUB_REF_NAME}"
+              git push --quiet origin "HEAD:${GITHUB_REF_NAME}"
+            }
+          fi
+
+      # « ls-remote --exit-code » renvoie 2 quand la branche n'existe pas : seul ce cas est une première
+      # exécution. Toute autre erreur arrête la tâche, sinon une panne passagère effacerait l'historique.
+      - name: Restaurer les données précédentes
+        run: |
+          set -euo pipefail
+          mkdir -p site/data
+          status=0
+          git ls-remote --exit-code --heads origin data >/dev/null 2>&1 || status=$?
+          if [ "$status" -eq 0 ]; then
+            git fetch --quiet --depth=1 origin data
+            git archive FETCH_HEAD | tar -x -C site/data
+            echo "Données précédentes restaurées."
+          elif [ "$status" -eq 2 ]; then
+            echo "Pas encore de données enregistrées (première exécution)."
+          else
+            echo "::error::Impossible de lire la branche « data » (code $status). Rien n'a été modifié ; nouvel essai à la prochaine exécution."
+            exit 1
+          fi
+
+      - name: Interroger l'API Blizzard
+        env:
+          BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
+          BLIZZARD_CLIENT_SECRET: ${{ secrets.BLIZZARD_CLIENT_SECRET }}
+        run: node scripts/sync.mjs
+
+      # Les données générées vivent sur la branche « data », réécrite à chaque fois en un seul commit :
+      # la branche main garde un historique propre et aucune ancienne donnée n'est conservée.
+      - name: Enregistrer les données
+        run: |
+          set -euo pipefail
+          export GIT_INDEX_FILE="$RUNNER_TEMP/data-index"
+          rm -f "$GIT_INDEX_FILE"
+          git -C site/data --git-dir="$GITHUB_WORKSPACE/.git" --work-tree="$GITHUB_WORKSPACE/site/data" add -A -f .
+          tree="$(git write-tree)"
+          commit="$(git commit-tree "$tree" -m "data: $(date -u +%Y-%m-%dT%H:%M:%SZ)")"
+          unset GIT_INDEX_FILE
+          git push --quiet --force origin "$commit:refs/heads/data"
+
+      - name: Préparer Pages
+        uses: actions/configure-pages@v6
+
+      - name: Empaqueter le site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      - name: Publier
+        id: deploy
+        uses: actions/deploy-pages@v5
