@@ -1047,15 +1047,17 @@ time.is-stale {
   opacity: 0.75;
 }
 
-/* Rank medallion: a dark disc with a ring; gold, silver and bronze for the podium. */
+/* Rank medallion: a dark disc with a ring; gold, silver and bronze for the podium. Fixed size and
+   centred in its column, so a wider column (36 px on desktop) never stretches it into an oval;
+   two digits (at most 50 players) fit inside. */
 .lane__rank {
   --ring: var(--border);
   grid-area: rank;
+  justify-self: center;
   display: grid;
   place-items: center;
-  min-width: 30px;
-  min-height: 30px;
-  padding-inline: 0.2em;
+  width: 30px;
+  height: 30px;
   background: var(--trough);
   border: 2px solid var(--ring);
   border-radius: 50%;
@@ -1258,13 +1260,14 @@ time.is-stale {
   background: linear-gradient(90deg, #000 50%, rgb(255 255 255 / 0.12) 50%);
 }
 
+/* The spark stays inside the trough: as tall as the fill, so its glow never spills over the bar. */
 .track__marker {
   position: absolute;
   left: calc(var(--p) * 100%);
   top: 50%;
   width: 12px;
-  height: 22px;
-  margin: -11px 0 0 -6px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
   background: radial-gradient(closest-side, #fff, rgb(255 255 255 / 0.55) 40%, transparent);
   mix-blend-mode: screen;
   pointer-events: none;
@@ -1274,15 +1277,16 @@ time.is-stale {
   display: none;
 }
 
+/* The seal sits inside .track__inner, whose right edge is the rail's end: half a seal to the right
+   puts its centre on that end, so the rail ends hidden under the disc instead of poking out of it. */
 .track__finish {
   position: absolute;
-  right: 0;
+  right: calc(var(--seal) / -2);
   top: 0;
   display: grid;
   place-items: center;
-  min-width: var(--seal);
-  min-height: var(--seal);
-  padding-inline: 0.2em;
+  width: var(--seal);
+  height: var(--seal);
   background: radial-gradient(circle at 50% 30%, var(--surface-3), var(--well));
   border: 2px solid var(--accent-2);
   border-radius: 50%;
