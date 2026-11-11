@@ -4,5 +4,12 @@
     "title": "Course au niveau 60",
     "goalLevel": 60
   },
-  "players": []
+  "players": [
+    {
+      "region": "eu",
+      "name": "Homme",
+      "surname": "Soumis",
+      "addedAt": "2026-11-11T01:45:03Z"
+    }
+  ]
 }
