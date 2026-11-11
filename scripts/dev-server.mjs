@@ -37,18 +37,25 @@ const DEMO_PLAYERS = [
   ['Inconnu', 'Fantome', 'Mystère'],
 ];
 
+/**
+ * The demo always races the fictional players: the mock API invents every level, so real character
+ * names from the repository's roster would only show made-up progress. The repository's settings
+ * (title, goal level, XP table) are kept so the demo previews them; its guilds are real ones that
+ * mean nothing to the fictional players.
+ */
 function seedRoster(nowIso) {
-  let base = { version: 1, settings: { title: 'Course au niveau 60', goalLevel: 60 }, players: [] };
+  let settings = { title: 'Course au niveau 60', goalLevel: 60 };
   try {
     const parsed = JSON.parse(fs.readFileSync(path.join(ROOT, 'players.json'), 'utf8'));
-    if (parsed && typeof parsed === 'object') base = parsed;
+    if (parsed?.settings && typeof parsed.settings === 'object' && !Array.isArray(parsed.settings)) {
+      const { guilds: _realGuilds, ...kept } = parsed.settings;
+      settings = { ...settings, ...kept };
+    }
   } catch {
-    // A missing or broken repository roster just means we fall back to the demo one.
+    // A missing or broken repository roster just means the default settings.
   }
-  if (!Array.isArray(base.players) || base.players.length === 0) {
-    base.players = DEMO_PLAYERS.map(([name, surname, label]) => ({ region: 'eu', name, surname, label, addedAt: nowIso }));
-  }
-  return `${JSON.stringify(base, null, 2)}\n`;
+  const players = DEMO_PLAYERS.map(([name, surname, label]) => ({ region: 'eu', name, surname, label, addedAt: nowIso }));
+  return `${JSON.stringify({ version: 1, settings, players }, null, 2)}\n`;
 }
 
 function send(res, status, body, headers = {}) {
