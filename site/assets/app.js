@@ -1,6 +1,7 @@
 // Entry point: owns the state, loads the data, renders the sections and wires the edit module.
 import { focusByKey, focusKey, toast } from './dom.js';
 import { initEdit } from './edit.js';
+import { showIntro } from './intro.js';
 import { mountChart } from './chart.js';
 import { chartSeries, rankPlayers } from './model.js';
 import { fullName } from './format.js';
@@ -42,6 +43,8 @@ let sheetStamp = null;
 let loading = null;
 let loadedAt = 0;
 let renderedKey = null;
+// While the intro plays, a sheet or a set-up asked for by the link waits for it to close.
+let introShowing = false;
 
 /* ---------- loading ---------- */
 
@@ -211,7 +214,7 @@ function updateSheet(ctx) {
 function syncFromHash({ closing = false } = {}) {
   const params = new URLSearchParams(location.hash.slice(1));
   const id = params.get('p');
-  if (!state.data) return;
+  if (!state.data || introShowing) return;
   if (id) {
     const player = state.data.players.find((p) => p.id === id);
     if (player) openSheet(player);
@@ -235,6 +238,11 @@ function start() {
   setupMenuDismiss();
   render();
   load();
+  introShowing = true;
+  showIntro().then(() => {
+    introShowing = false;
+    syncFromHash();
+  });
 
   setInterval(() => {
     if (document.visibilityState === 'visible') loadIfStale();

@@ -25,6 +25,8 @@ const MIME = {
   '.jpg': 'image/jpeg',
   '.ico': 'image/x-icon',
   '.txt': 'text/plain; charset=utf-8',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
 };
 
 const DEMO_PLAYERS = [
@@ -88,13 +90,39 @@ function resolveInside(root, urlPath) {
   return rel.startsWith('..') || path.isAbsolute(rel) ? null : file;
 }
 
+/** "bytes=a-b", "bytes=a-" or "bytes=-n" as an inclusive [start, end]; null for anything else, 'bad' when unsatisfiable. */
+function byteRange(header, size) {
+  const m = /^bytes=(\d*)-(\d*)$/.exec(header ?? '');
+  if (!m || (!m[1] && !m[2])) return null;
+  const start = m[1] ? Number(m[1]) : Math.max(size - Number(m[2]), 0);
+  const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
+  return start > end || start >= size ? 'bad' : [start, end];
+}
+
+// Range requests, like GitHub Pages: a browser starts playing a video before it has all of it.
 function serveFile(req, res, file) {
   fs.stat(file, (err, stat) => {
     if (err || !stat.isFile()) return send(res, 404, 'Introuvable');
-    fs.readFile(file, (readErr, content) => {
+    const type = MIME[path.extname(file).toLowerCase()] ?? 'application/octet-stream';
+    const range = byteRange(req.headers.range, stat.size);
+    if (range === 'bad') return send(res, 416, undefined, { 'Content-Range': `bytes */${stat.size}` });
+    if (range) {
+      const [start, end] = range;
+      res.writeHead(206, {
+        'Cache-Control': 'no-store',
+        'Content-Type': type,
+        'Content-Length': end - start + 1,
+        'Content-Range': `bytes ${start}-${end}/${stat.size}`,
+        'Accept-Ranges': 'bytes',
+      });
+      if (req.method === 'HEAD') return res.end();
+      return fs.createReadStream(file, { start, end }).on('error', () => res.destroy()).pipe(res);
+    }
+    return fs.readFile(file, (readErr, content) => {
       if (readErr) return send(res, 404, 'Introuvable');
-      const type = MIME[path.extname(file).toLowerCase()] ?? 'application/octet-stream';
-      send(res, 200, req.method === 'HEAD' ? undefined : content, { 'Content-Type': type, 'Content-Length': content.length });
+      send(res, 200, req.method === 'HEAD' ? undefined : content, {
+        'Content-Type': type, 'Content-Length': content.length, 'Accept-Ranges': 'bytes',
+      });
     });
   });
 }

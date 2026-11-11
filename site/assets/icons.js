@@ -20,6 +20,8 @@ const SHAPES = {
   alert: [['path', { d: 'M12 4l9 16H3L12 4zM12 10v4M12 17h.01' }]],
   search: [['circle', { cx: 11, cy: 11, r: 6 }], ['path', { d: 'M16 16l4 4' }]],
   trash: [['path', { d: 'M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13M10 11v5M14 11v5' }]],
+  play: [['path', { d: 'M8 5.5v13l10.5-6.5z', fill: 'currentColor' }]],
+  skip: [['path', { d: 'M6 6.5v11l8.5-5.5z', fill: 'currentColor' }], ['path', { d: 'M18 6v12' }]],
 };
 
 export function icon(name, size = 18) {

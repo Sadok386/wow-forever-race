@@ -76,6 +76,24 @@ describe('dev server', () => {
     assert.equal((await fetch(`${base}/nothing-here.js`)).status, 404);
   });
 
+  test('answers byte ranges, as GitHub Pages does for videos', async () => {
+    const whole = Buffer.from(await (await fetch(`${base}/assets/shared.js`)).arrayBuffer());
+    const size = whole.length;
+    const part = await fetch(`${base}/assets/shared.js`, { headers: { Range: 'bytes=0-9' } });
+    assert.equal(part.status, 206);
+    assert.equal(part.headers.get('content-range'), `bytes 0-9/${size}`);
+    assert.equal(part.headers.get('accept-ranges'), 'bytes');
+    assert.deepEqual(Buffer.from(await part.arrayBuffer()), whole.subarray(0, 10));
+    const tail = await fetch(`${base}/assets/shared.js`, { headers: { Range: 'bytes=-5' } });
+    assert.equal(tail.status, 206);
+    assert.equal(tail.headers.get('content-range'), `bytes ${size - 5}-${size - 1}/${size}`);
+    const past = await fetch(`${base}/assets/shared.js`, { headers: { Range: `bytes=${size}-` } });
+    assert.equal(past.status, 416);
+    assert.equal(past.headers.get('content-range'), `bytes */${size}`);
+    const odd = await fetch(`${base}/assets/shared.js`, { headers: { Range: 'items=0-1' } });
+    assert.equal(odd.status, 200, 'an unknown unit gets the whole file');
+  });
+
   test('serves generated data and a missing edit.json as 404', async () => {
     const res = await fetch(`${base}/data/data.json`);
     assert.equal(res.status, 200);

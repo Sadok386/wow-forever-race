@@ -1,0 +1,171 @@
+/* The intro (intro.js): one video, full page, on black, with a gold splash before it starts and
+   "Passer" always within reach. Built on the tokens and the kit of style.css. */
+
+html:has(.intro[open]) {
+  overflow: hidden;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+  border: 0;
+  color: var(--text);
+  transition: opacity 0.5s ease;
+}
+
+.intro::backdrop {
+  background: #000;
+}
+
+.intro.is-leaving {
+  opacity: 0;
+}
+
+/* Letterboxed on black, whatever the shape of the screen. */
+.intro__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.intro.is-playing .intro__video {
+  opacity: 1;
+}
+
+.intro__splash {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  padding: var(--s6) var(--s5);
+  background: radial-gradient(ellipse 60% 45% at 50% 50%, rgb(255 209 0 / 0.07), transparent 70%);
+  text-align: center;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.intro.is-playing .intro__splash {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.intro__title {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+.intro__splash .divider {
+  width: min(280px, 70%);
+  margin-bottom: var(--s5);
+}
+
+/* The play button: a dark disc ringed in gold, glowing, with its label underneath. */
+.intro__play {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s3);
+  padding: var(--s2) var(--s3);
+  background: none;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--accent);
+  font: 700 1.125rem/1.2 var(--font-display);
+  letter-spacing: 0.02em;
+  text-shadow: var(--shadow-text);
+  cursor: pointer;
+}
+
+.intro__play-ring {
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+  /* The triangle's visual centre sits right of its box centre. */
+  padding-left: 5px;
+  background: radial-gradient(circle at 50% 35%, var(--surface-3), var(--well) 72%);
+  border: 2px solid var(--accent-2);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px #000,
+    0 0 0 5px color-mix(in srgb, var(--accent-2) 22%, transparent),
+    0 0 36px rgb(255 209 0 / 0.22),
+    inset 0 2px 10px rgb(0 0 0 / 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.intro__play:hover .intro__play-ring,
+.intro__play:focus-visible .intro__play-ring {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 0 1px #000,
+    0 0 0 5px color-mix(in srgb, var(--accent) 40%, transparent),
+    0 0 52px rgb(255 209 0 / 0.4),
+    inset 0 2px 10px rgb(0 0 0 / 0.8);
+}
+
+/* The keyboard focus ring follows the disc, in gold, instead of boxing the whole button. */
+.intro__play:focus-visible {
+  outline: none;
+}
+
+.intro__play:focus-visible .intro__play-ring {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.intro__meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.intro__skip {
+  position: absolute;
+  top: max(var(--s4), env(safe-area-inset-top));
+  right: max(var(--s4), env(safe-area-inset-right));
+}
+
+/* A thin gold line along the bottom tells how much is left. */
+.intro__progress {
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: rgb(255 255 255 / 0.08);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.intro.is-playing .intro__progress {
+  opacity: 1;
+}
+
+.intro__progress-bar {
+  display: block;
+  width: calc(var(--p, 0) * 100%);
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-lo), var(--accent));
+  box-shadow: 0 0 8px rgb(255 209 0 / 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro,
+  .intro__video,
+  .intro__splash,
+  .intro__progress,
+  .intro__play-ring {
+    transition: none;
+  }
+}

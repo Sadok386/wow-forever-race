@@ -9,7 +9,7 @@ import { ROOT } from '../lib/paths.mjs';
 
 const SITE = path.join(ROOT, 'site');
 const ASSETS = path.join(SITE, 'assets');
-const CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://render.worldofwarcraft.com; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'";
+const CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://render.worldofwarcraft.com; media-src 'self'; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'";
 
 const read = (file) => fs.readFileSync(file, 'utf8');
 const html = read(path.join(SITE, 'index.html'));
