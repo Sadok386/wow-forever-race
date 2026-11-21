@@ -1,0 +1,2741 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-11-21T16:55:29Z",
+  "settings": {
+    "title": "RUSH 60",
+    "goalLevel": 60
+  },
+  "repo": {
+    "owner": "Sadok386",
+    "name": "wow-forever-race",
+    "branch": "main",
+    "workflow": "tracker.yml",
+    "apiBase": "https://api.github.com"
+  },
+  "status": {
+    "code": "ok",
+    "message": null,
+    "warnings": []
+  },
+  "xpTable": [
+    400,
+    900,
+    1400,
+    2100,
+    2800,
+    3600,
+    4500,
+    5400,
+    6500,
+    7600,
+    8800,
+    10100,
+    11400,
+    12900,
+    14400,
+    16000,
+    17700,
+    19400,
+    21300,
+    23200,
+    25200,
+    27300,
+    29400,
+    31700,
+    34000,
+    36400,
+    38900,
+    41400,
+    44300,
+    47400,
+    50800,
+    54500,
+    58600,
+    62800,
+    67100,
+    71600,
+    76100,
+    80800,
+    85700,
+    90700,
+    95800,
+    101000,
+    106300,
+    111800,
+    117500,
+    123200,
+    129100,
+    135100,
+    141200,
+    147500,
+    153900,
+    160400,
+    167100,
+    173900,
+    180800,
+    187900,
+    195000,
+    202300,
+    209800
+  ],
+  "players": [
+    {
+      "id": "eu:homme-soumis",
+      "region": "eu",
+      "slug": "homme-soumis",
+      "name": "Homme",
+      "surname": "Soumis",
+      "label": "Sadok",
+      "addedAt": "2026-11-11T01:45:03Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 25556918,
+      "level": 33,
+      "xp": 35088,
+      "changedAt": "2026-11-21T16:55:29Z",
+      "levelAt": "2026-11-21T16:55:29Z",
+      "goalAt": null,
+      "class": {
+        "id": 11,
+        "name": "Druide"
+      },
+      "race": {
+        "id": 4,
+        "name": "Elfe de la nuit"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 25,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T16:47:35Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/182/25556918-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/182/25556918-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 4039,
+          "name": "Capuche nocturne",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133132.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 281290,
+          "name": "Réplique de collier à croissant de lune",
+          "quality": "UNCOMMON",
+          "ilvl": 26,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133298.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 270044,
+          "name": "Garde-épaules de Sombre-Comté",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135039.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 7004,
+          "name": "Cape de prélat",
+          "quality": "UNCOMMON",
+          "ilvl": 26,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133770.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 5814,
+          "name": "Armure du ruisseau",
+          "quality": "UNCOMMON",
+          "ilvl": 30,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132725.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 281251,
+          "name": "Garde-poignets de coursier",
+          "quality": "UNCOMMON",
+          "ilvl": 24,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132601.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 9780,
+          "name": "Gants de bandit du gorille",
+          "quality": "UNCOMMON",
+          "ilvl": 20,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132949.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 6911,
+          "name": "Cordelière de mousse",
+          "quality": "RARE",
+          "ilvl": 30,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132514.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 270031,
+          "name": "Jambières du sombre rituel",
+          "quality": "RARE",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134582.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 277226,
+          "name": "Chaussures décousues",
+          "quality": "UNCOMMON",
+          "ilvl": 28,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132540.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 2043,
+          "name": "Anneau des Esprits glacés",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133343.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 270051,
+          "name": "Anneau d’héritage de Ladimore",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133350.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 2077,
+          "name": "Bâton de magicien de guérison",
+          "quality": "UNCOMMON",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135468.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 263411,
+          "name": "Idole des flots changeants",
+          "quality": "UNCOMMON",
+          "ilvl": 16,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134914.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Herbalism",
+          "skill": 80,
+          "max": 150
+        },
+        {
+          "name": "Cooking",
+          "skill": 175,
+          "max": 225
+        },
+        {
+          "name": "Fishing",
+          "skill": 43,
+          "max": 75
+        },
+        {
+          "name": "First Aid",
+          "skill": 39,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 1024,
+        "power": 1864,
+        "powerType": "Mana",
+        "strength": 45,
+        "agility": 49,
+        "stamina": 71,
+        "intellect": 97,
+        "spirit": 88,
+        "armor": 651
+      },
+      "talents": [
+        {
+          "name": "Restauration",
+          "points": 16
+        },
+        {
+          "name": "Combat farouche",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "id": "eu:tiziano-donquixote",
+      "region": "eu",
+      "slug": "tiziano-donquixote",
+      "name": "Tiziano",
+      "surname": "Donquixote",
+      "label": "Yassine.G",
+      "addedAt": "2026-11-11T02:39:02Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 6267469,
+      "level": 47,
+      "xp": 89114,
+      "changedAt": "2026-11-21T09:36:16Z",
+      "levelAt": "2026-11-20T12:44:10Z",
+      "goalAt": null,
+      "class": {
+        "id": 1,
+        "name": "Guerrier"
+      },
+      "race": {
+        "id": 1,
+        "name": "Humain"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": {
+        "name": "HALF BRAIN SQUAD",
+        "slug": "half-brain-squad"
+      },
+      "ilvl": 37,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T14:52:22Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/77/6267469-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/77/6267469-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 20640,
+          "name": "Seau de tête des Mers du sud",
+          "quality": "UNCOMMON",
+          "ilvl": 45,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133122.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 12023,
+          "name": "Collier de tellure de l’ours",
+          "quality": "UNCOMMON",
+          "ilvl": 45,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133290.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 15698,
+          "name": "Spallières de renforcement",
+          "quality": "UNCOMMON",
+          "ilvl": 38,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135045.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 15153,
+          "name": "Cape de noctambule de force",
+          "quality": "UNCOMMON",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133754.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 9897,
+          "name": "Corselet jazeran de chevalerie",
+          "quality": "UNCOMMON",
+          "ilvl": 42,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132631.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 2575,
+          "name": "Chemise rouge en lin",
+          "quality": "COMMON",
+          "ilvl": 10,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135029.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 6413,
+          "name": "Brassards de général de brigade",
+          "quality": "UNCOMMON",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132617.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 4509,
+          "name": "Gants de loup de mer",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132957.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 13145,
+          "name": "Enorme ceinture ogre",
+          "quality": "RARE",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132516.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 274939,
+          "name": "Jambières de la garde du Sud",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134583.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 9637,
+          "name": "Bottes Shinkicker",
+          "quality": "UNCOMMON",
+          "ilvl": 45,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132588.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 276899,
+          "name": "Cosse articulaire",
+          "quality": "RARE",
+          "ilvl": 38,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133343.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 284715,
+          "name": "Bague de second",
+          "quality": "RARE",
+          "ilvl": 22,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133343.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "TRINKET_1",
+          "slotName": "1er bijou",
+          "itemId": 280766,
+          "name": "Sacoche de potions",
+          "quality": "UNCOMMON",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133633.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 9418,
+          "name": "Déchireuse",
+          "quality": "RARE",
+          "ilvl": 49,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135357.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 275052,
+          "name": "Arc en os orc",
+          "quality": "UNCOMMON",
+          "ilvl": 39,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133727.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "AMMO",
+          "slotName": "Munitions",
+          "itemId": 3464,
+          "name": "Flèche à plumes",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132382.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Mining",
+          "skill": 81,
+          "max": 150
+        },
+        {
+          "name": "Blacksmithing",
+          "skill": 44,
+          "max": 75
+        },
+        {
+          "name": "Cooking",
+          "skill": 10,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 2335,
+        "power": 100,
+        "powerType": "Rage",
+        "strength": 181,
+        "agility": 77,
+        "stamina": 158,
+        "intellect": 27,
+        "spirit": 47,
+        "armor": 1819
+      },
+      "talents": [
+        {
+          "name": "Armes",
+          "points": 32
+        },
+        {
+          "name": "Fureur",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "id": "eu:allmight-allmight",
+      "region": "eu",
+      "slug": "allmight-allmight",
+      "name": "Allmight",
+      "surname": "Allmight",
+      "label": "ALLMIGHT",
+      "addedAt": "2026-11-11T02:41:37Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 12991069,
+      "level": 40,
+      "xp": 29016,
+      "changedAt": "2026-11-21T16:55:29Z",
+      "levelAt": "2026-11-21T16:55:29Z",
+      "goalAt": null,
+      "class": {
+        "id": 3,
+        "name": "Chasseur"
+      },
+      "race": {
+        "id": 1,
+        "name": "Humain"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 37,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T16:48:18Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/93/12991069-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/93/12991069-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 10545,
+          "name": "Lunettes gnomes",
+          "quality": "UNCOMMON",
+          "ilvl": 42,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133149.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 4614,
+          "name": "Pendentif de Myzrael",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133294.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 273804,
+          "name": "Mantelet d’exécution",
+          "quality": "RARE",
+          "ilvl": 26,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135039.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 13121,
+          "name": "Aile du jeune dragonnet",
+          "quality": "RARE",
+          "ilvl": 38,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133756.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 4119,
+          "name": "Tunique de chasseur de raptors",
+          "quality": "UNCOMMON",
+          "ilvl": 43,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132722.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 2575,
+          "name": "Chemise rouge en lin",
+          "quality": "COMMON",
+          "ilvl": 10,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135029.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 270032,
+          "name": "Garde-bras de la secte",
+          "quality": "RARE",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132611.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 270072,
+          "name": "Gants d’assassin d’Alterac",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132949.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 3562,
+          "name": "Ceinture de justification",
+          "quality": "RARE",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132494.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 4108,
+          "name": "Jambières du chasseur de panthères",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134582.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 4109,
+          "name": "Bottes d'Excelsior",
+          "quality": "UNCOMMON",
+          "ilvl": 41,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132541.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 281320,
+          "name": "Anneau gravé de runes",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133357.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 270053,
+          "name": "Anneau de la ruine",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133350.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "TRINKET_1",
+          "slotName": "1er bijou",
+          "itemId": 10720,
+          "name": "Lance-filet automatique gnome",
+          "quality": "COMMON",
+          "ilvl": 42,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134325.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "TRINKET_2",
+          "slotName": "2e bijou",
+          "itemId": 10725,
+          "name": "Coq de combat gnome",
+          "quality": "COMMON",
+          "ilvl": 46,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135996.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 281313,
+          "name": "Fidèle épée",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135274.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 17686,
+          "name": "Arc de maître-chasseur",
+          "quality": "UNCOMMON",
+          "ilvl": 43,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135499.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "AMMO",
+          "slotName": "Munitions",
+          "itemId": 11285,
+          "name": "Flèche barbelée",
+          "quality": "COMMON",
+          "ilvl": 45,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135661.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Mining",
+          "skill": 248,
+          "max": 300
+        },
+        {
+          "name": "Engineering",
+          "skill": 241,
+          "max": 300
+        },
+        {
+          "name": "Cooking",
+          "skill": 1,
+          "max": 75
+        },
+        {
+          "name": "First Aid",
+          "skill": 225,
+          "max": 225
+        }
+      ],
+      "stats": {
+        "health": 1957,
+        "power": 1485,
+        "powerType": "Mana",
+        "strength": 55,
+        "agility": 146,
+        "stamina": 147,
+        "intellect": 44,
+        "spirit": 93,
+        "armor": 921
+      },
+      "talents": [
+        {
+          "name": "Maîtrise des bêtes",
+          "points": 31
+        }
+      ]
+    },
+    {
+      "id": "eu:le-roux",
+      "region": "eu",
+      "slug": "le-roux",
+      "name": "Le",
+      "surname": "Roux",
+      "label": "mehdi",
+      "addedAt": "2026-11-11T02:42:24Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 15568250,
+      "level": 35,
+      "xp": 43907,
+      "changedAt": "2026-11-21T09:36:16Z",
+      "levelAt": "2026-11-21T01:25:59Z",
+      "goalAt": null,
+      "class": {
+        "id": 4,
+        "name": "Voleur"
+      },
+      "race": {
+        "id": 1,
+        "name": "Humain"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 24,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T02:47:25Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/122/15568250-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/122/15568250-main-raw.png",
+      "gear": [
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 12030,
+          "name": "Collier fusant de chevalerie",
+          "quality": "UNCOMMON",
+          "ilvl": 39,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133293.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 270044,
+          "name": "Garde-épaules de Sombre-Comté",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135039.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 281319,
+          "name": "Cape de guerre de golem",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133772.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 2041,
+          "name": "Tunique de la marche de l'Ouest",
+          "quality": "RARE",
+          "ilvl": 24,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132722.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 2575,
+          "name": "Chemise rouge en lin",
+          "quality": "COMMON",
+          "ilvl": 10,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135029.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 270015,
+          "name": "Bracières de sicaire",
+          "quality": "UNCOMMON",
+          "ilvl": 22,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132606.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 4107,
+          "name": "Gants de chasseur de tigres",
+          "quality": "UNCOMMON",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132938.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 6382,
+          "name": "Ceinture sylvestre en cuir",
+          "quality": "UNCOMMON",
+          "ilvl": 23,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132492.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 1310,
+          "name": "Pantalon de Smith",
+          "quality": "UNCOMMON",
+          "ilvl": 20,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134582.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 4055,
+          "name": "Bottes à insigne",
+          "quality": "UNCOMMON",
+          "ilvl": 34,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132541.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 270050,
+          "name": "Anneau de rage",
+          "quality": "UNCOMMON",
+          "ilvl": 34,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133355.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 1076,
+          "name": "Anneau du renégat défias",
+          "quality": "RARE",
+          "ilvl": 26,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133344.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 281314,
+          "name": "Croc de Dragon soumis",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135637.jpg",
+          "enchant": "Poison affaiblissant"
+        },
+        {
+          "slot": "OFF_HAND",
+          "slotName": "Main gauche",
+          "itemId": 864,
+          "name": "Epée longue des chevaliers de puissance",
+          "quality": "UNCOMMON",
+          "ilvl": 38,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135328.jpg",
+          "enchant": "Poison instantané (47 |4charge:charges;)"
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 287067,
+          "name": "Écorche-peau gueule-de-dragon",
+          "quality": "UNCOMMON",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135426.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Cooking",
+          "skill": 1,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 1193,
+        "power": 100,
+        "powerType": "Énergie",
+        "strength": 86,
+        "agility": 120,
+        "stamina": 82,
+        "intellect": 27,
+        "spirit": 50,
+        "armor": 787
+      },
+      "talents": [
+        {
+          "name": "Combat",
+          "points": 10
+        },
+        {
+          "name": "Assassinat",
+          "points": 8
+        },
+        {
+          "name": "Finesse",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "id": "eu:grougalo-ragran",
+      "region": "eu",
+      "slug": "grougalo-ragran",
+      "name": "Grougalo",
+      "surname": "Ragran",
+      "label": "Yacine",
+      "addedAt": "2026-11-11T02:48:56Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 7036010,
+      "level": 36,
+      "xp": 61303,
+      "changedAt": "2026-11-21T09:36:16Z",
+      "levelAt": "2026-11-20T05:59:34Z",
+      "goalAt": null,
+      "class": {
+        "id": 8,
+        "name": "Mage"
+      },
+      "race": {
+        "id": 95,
+        "name": "Éolide de l’Ordre suprême"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 29,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T06:48:16Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/106/7036010-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/106/7036010-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 4322,
+          "name": "Capuche d'enchanteur",
+          "quality": "UNCOMMON",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133133.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 273049,
+          "name": "Pendentif à facettes d’archimagistère",
+          "quality": "RARE",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/466975.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 7057,
+          "name": "Epaulières vertes en soie",
+          "quality": "UNCOMMON",
+          "ilvl": 36,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135049.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 15354,
+          "name": "Cape de chasseur de têtes de sorcellerie",
+          "quality": "UNCOMMON",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133755.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 7065,
+          "name": "Armure verte en soie",
+          "quality": "UNCOMMON",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132647.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 271655,
+          "name": "Chemise d’apprenti de Thendal",
+          "quality": "COMMON",
+          "ilvl": 1,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/7813752.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 273036,
+          "name": "Manchettes tissetombes",
+          "quality": "RARE",
+          "ilvl": 31,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132609.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 270029,
+          "name": "Mitaines de l’échoppe du village",
+          "quality": "UNCOMMON",
+          "ilvl": 28,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132961.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 251962,
+          "name": "Écharpe pourpre",
+          "quality": "UNCOMMON",
+          "ilvl": 36,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132493.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 270036,
+          "name": "Culotte de magistrat",
+          "quality": "RARE",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134594.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 273024,
+          "name": "Mules d’œiluisant",
+          "quality": "RARE",
+          "ilvl": 31,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132539.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 1449,
+          "name": "Anneau de canalisation mineure",
+          "quality": "UNCOMMON",
+          "ilvl": 24,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133355.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 273031,
+          "name": "Sceau de répare-runes",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133370.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "TRINKET_1",
+          "slotName": "1er bijou",
+          "itemId": 280766,
+          "name": "Sacoche de potions",
+          "quality": "UNCOMMON",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133633.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 273040,
+          "name": "Échine du dévoreur",
+          "quality": "RARE",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135144.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 273043,
+          "name": "Baguette de concentration de mana",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135468.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Skinning",
+          "skill": 138,
+          "max": 225
+        },
+        {
+          "name": "Mining",
+          "skill": 129,
+          "max": 150
+        },
+        {
+          "name": "Cooking",
+          "skill": 5,
+          "max": 75
+        },
+        {
+          "name": "Fishing",
+          "skill": 1,
+          "max": 75
+        },
+        {
+          "name": "First Aid",
+          "skill": 1,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 918,
+        "power": 3129,
+        "powerType": "Mana",
+        "strength": 28,
+        "agility": 32,
+        "stamina": 58,
+        "intellect": 177,
+        "spirit": 80,
+        "armor": 352
+      },
+      "talents": [
+        {
+          "name": "Arcane",
+          "points": 25
+        },
+        {
+          "name": "Givre",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "id": "eu:rockss-di",
+      "region": "eu",
+      "slug": "rockss-di",
+      "name": "Rockss",
+      "surname": "Di",
+      "label": "Nassim",
+      "addedAt": "2026-11-11T11:50:06Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 28097578,
+      "level": 31,
+      "xp": 18314,
+      "changedAt": "2026-11-21T01:25:59Z",
+      "levelAt": "2026-11-21T01:25:59Z",
+      "goalAt": null,
+      "class": {
+        "id": 11,
+        "name": "Druide"
+      },
+      "race": {
+        "id": 95,
+        "name": "Éolide de l’Ordre suprême"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 22,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-20T23:38:15Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/42/28097578-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/42/28097578-main-raw.png",
+      "gear": [
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 281290,
+          "name": "Réplique de collier à croissant de lune",
+          "quality": "UNCOMMON",
+          "ilvl": 26,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133298.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 270044,
+          "name": "Garde-épaules de Sombre-Comté",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135039.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 14179,
+          "name": "Cape de guetteur de puissance",
+          "quality": "UNCOMMON",
+          "ilvl": 24,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133767.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 3566,
+          "name": "Armure de la plaie des raptors",
+          "quality": "UNCOMMON",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132716.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 271668,
+          "name": "Chemise de survivaliste de Thendal",
+          "quality": "COMMON",
+          "ilvl": 1,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/7813752.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 6902,
+          "name": "Poignets de Serra'kis",
+          "quality": "RARE",
+          "ilvl": 27,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132607.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 888,
+          "name": "Gants de bataille nagas",
+          "quality": "RARE",
+          "ilvl": 27,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132947.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 7000,
+          "name": "Ceinturon de coeur du bois",
+          "quality": "UNCOMMON",
+          "ilvl": 27,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132493.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 270031,
+          "name": "Jambières du sombre rituel",
+          "quality": "RARE",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134582.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 277226,
+          "name": "Chaussures décousues",
+          "quality": "UNCOMMON",
+          "ilvl": 28,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132540.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 12054,
+          "name": "Anneau des démons",
+          "quality": "UNCOMMON",
+          "ilvl": 24,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133346.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 1319,
+          "name": "Anneau de volonté de fer",
+          "quality": "UNCOMMON",
+          "ilvl": 25,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132520.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 6093,
+          "name": "Concassorc",
+          "quality": "UNCOMMON",
+          "ilvl": 27,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133482.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 263411,
+          "name": "Idole des flots changeants",
+          "quality": "UNCOMMON",
+          "ilvl": 16,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134914.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Leatherworking",
+          "skill": 1,
+          "max": 75
+        },
+        {
+          "name": "Skinning",
+          "skill": 75,
+          "max": 75
+        },
+        {
+          "name": "Cooking",
+          "skill": 1,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 1069,
+        "power": 1219,
+        "powerType": "Mana",
+        "strength": 58,
+        "agility": 44,
+        "stamina": 81,
+        "intellect": 58,
+        "spirit": 69,
+        "armor": 579
+      },
+      "talents": [
+        {
+          "name": "Combat farouche",
+          "points": 22
+        }
+      ]
+    },
+    {
+      "id": "eu:osa-lovely",
+      "region": "eu",
+      "slug": "osa-lovely",
+      "name": "Osa",
+      "surname": "Lovely",
+      "label": "lucas",
+      "addedAt": "2026-11-11T12:21:17Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 7479898,
+      "level": 44,
+      "xp": 8063,
+      "changedAt": "2026-11-21T01:25:59Z",
+      "levelAt": "2026-11-21T01:25:59Z",
+      "goalAt": null,
+      "class": {
+        "id": 4,
+        "name": "Voleur"
+      },
+      "race": {
+        "id": 1,
+        "name": "Humain"
+      },
+      "gender": "FEMALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": {
+        "name": "Bounty Hunter",
+        "slug": "bounty-hunter"
+      },
+      "ilvl": 36,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T11:11:40Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/90/7479898-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/90/7479898-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 9859,
+          "name": "Coiffe d'archer d’agilité",
+          "quality": "UNCOMMON",
+          "ilvl": 36,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133117.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 10824,
+          "name": "Talisman de luisambre",
+          "quality": "RARE",
+          "ilvl": 44,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133294.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 279879,
+          "name": "Épaulettes gravées de runes",
+          "quality": "RARE",
+          "ilvl": 41,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135056.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 274612,
+          "name": "Linceul détrempé",
+          "quality": "RARE",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133767.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 4119,
+          "name": "Tunique de chasseur de raptors",
+          "quality": "UNCOMMON",
+          "ilvl": 43,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132722.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 2575,
+          "name": "Chemise rouge en lin",
+          "quality": "COMMON",
+          "ilvl": 10,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135029.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 4061,
+          "name": "Brassards impériaux en cuir",
+          "quality": "UNCOMMON",
+          "ilvl": 42,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132602.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 270089,
+          "name": "Gants d’agent de Forgefer",
+          "quality": "UNCOMMON",
+          "ilvl": 45,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132959.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 279854,
+          "name": "Ceinture d’initiation du Crépuscule",
+          "quality": "UNCOMMON",
+          "ilvl": 46,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132515.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 9624,
+          "name": "Chausses du coureur",
+          "quality": "RARE",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134588.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 2033,
+          "name": "Bottes de l'Ambassadeur",
+          "quality": "UNCOMMON",
+          "ilvl": 28,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132542.jpg",
+          "enchant": "Enchanté : Eperons en mithril"
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 1491,
+          "name": "Anneau de précision",
+          "quality": "RARE",
+          "ilvl": 27,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133356.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 11996,
+          "name": "Anneau basaltique de brigandage",
+          "quality": "UNCOMMON",
+          "ilvl": 34,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133355.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "TRINKET_1",
+          "slotName": "1er bijou",
+          "itemId": 280766,
+          "name": "Sacoche de potions",
+          "quality": "UNCOMMON",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133633.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 275007,
+          "name": "Cogneur de Mugg",
+          "quality": "RARE",
+          "ilvl": 47,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135593.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "OFF_HAND",
+          "slotName": "Main gauche",
+          "itemId": 279852,
+          "name": "Pierre sur un bâton",
+          "quality": "RARE",
+          "ilvl": 47,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133046.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 273029,
+          "name": "Arme d’épaule mire-de-golem",
+          "quality": "RARE",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134536.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "AMMO",
+          "slotName": "Munitions",
+          "itemId": 3033,
+          "name": "Balle dure",
+          "quality": "COMMON",
+          "ilvl": 30,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132384.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Leatherworking",
+          "skill": 53,
+          "max": 150
+        },
+        {
+          "name": "Skinning",
+          "skill": 79,
+          "max": 150
+        },
+        {
+          "name": "Cooking",
+          "skill": 1,
+          "max": 75
+        },
+        {
+          "name": "First Aid",
+          "skill": 1,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 1901,
+        "power": 100,
+        "powerType": "Énergie",
+        "strength": 77,
+        "agility": 192,
+        "stamina": 124,
+        "intellect": 30,
+        "spirit": 69,
+        "armor": 1066
+      },
+      "talents": [
+        {
+          "name": "Combat",
+          "points": 33
+        },
+        {
+          "name": "Assassinat",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "id": "eu:abdissnchz-viegoo",
+      "region": "eu",
+      "slug": "abdissnchz-viegoo",
+      "name": "Abdissnchz",
+      "surname": "Viegoo",
+      "label": "abdis",
+      "addedAt": "2026-11-11T14:47:56Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 8096433,
+      "level": 41,
+      "xp": 68657,
+      "changedAt": "2026-11-21T16:55:29Z",
+      "levelAt": "2026-11-21T09:36:16Z",
+      "goalAt": null,
+      "class": {
+        "id": 4,
+        "name": "Voleur"
+      },
+      "race": {
+        "id": 1,
+        "name": "Humain"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 30,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T15:15:15Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/177/8096433-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/177/8096433-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 10406,
+          "name": "Bandeau en cuir écaillé de brigandage",
+          "quality": "UNCOMMON",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133681.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 12020,
+          "name": "Pendentif de thallium d’esquive",
+          "quality": "UNCOMMON",
+          "ilvl": 36,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133296.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 279879,
+          "name": "Épaulettes gravées de runes",
+          "quality": "RARE",
+          "ilvl": 41,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135056.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 5193,
+          "name": "Cape de la confrérie",
+          "quality": "RARE",
+          "ilvl": 24,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133760.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 3566,
+          "name": "Armure de la plaie des raptors",
+          "quality": "UNCOMMON",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132716.jpg",
+          "enchant": "Enchanté : Endurance +2 et Armure +16"
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 49,
+          "name": "Chemise de détrousseur",
+          "quality": "COMMON",
+          "ilvl": 1,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135009.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 270076,
+          "name": "Brassards de la marée",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132608.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 270072,
+          "name": "Gants d’assassin d’Alterac",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132949.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 3562,
+          "name": "Ceinture de justification",
+          "quality": "RARE",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132494.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 274602,
+          "name": "Jambières de pansaumâtre",
+          "quality": "RARE",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134636.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 4109,
+          "name": "Bottes d'Excelsior",
+          "quality": "UNCOMMON",
+          "ilvl": 41,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132541.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 1076,
+          "name": "Anneau du renégat défias",
+          "quality": "RARE",
+          "ilvl": 26,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133344.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 277210,
+          "name": "Chevalière de Bois-du-Bûcher",
+          "quality": "RARE",
+          "ilvl": 25,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133344.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 274603,
+          "name": "Sabre givreffroi",
+          "quality": "RARE",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135714.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "OFF_HAND",
+          "slotName": "Main gauche",
+          "itemId": 864,
+          "name": "Epée longue des chevaliers du tigre",
+          "quality": "UNCOMMON",
+          "ilvl": 38,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135328.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 287069,
+          "name": "Dépeceur de yétis",
+          "quality": "UNCOMMON",
+          "ilvl": 34,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135425.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Skinning",
+          "skill": 53,
+          "max": 75
+        },
+        {
+          "name": "Cooking",
+          "skill": 90,
+          "max": 150
+        },
+        {
+          "name": "Fishing",
+          "skill": 1,
+          "max": 75
+        },
+        {
+          "name": "First Aid",
+          "skill": 21,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 1726,
+        "power": 100,
+        "powerType": "Énergie",
+        "strength": 72,
+        "agility": 169,
+        "stamina": 117,
+        "intellect": 29,
+        "spirit": 51,
+        "armor": 996
+      },
+      "talents": [
+        {
+          "name": "Combat",
+          "points": 32
+        }
+      ]
+    },
+    {
+      "id": "eu:gøybob-shalømpants",
+      "region": "eu",
+      "slug": "gøybob-shalømpants",
+      "name": "Gøybob",
+      "surname": "Shalømpants",
+      "label": "Zof",
+      "addedAt": "2026-11-11T15:09:12Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 19372322,
+      "level": 33,
+      "xp": 50800,
+      "changedAt": "2026-11-20T19:25:29Z",
+      "levelAt": "2026-11-19T17:14:34Z",
+      "goalAt": null,
+      "class": {
+        "id": 3,
+        "name": "Chasseur"
+      },
+      "race": {
+        "id": 3,
+        "name": "Nain"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 29,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T03:39:01Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/34/19372322-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/34/19372322-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 252504,
+          "name": "Chaperon de bagarreur en cuir",
+          "quality": "RARE",
+          "ilvl": 25,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133133.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 273049,
+          "name": "Pendentif à facettes d’archimagistère",
+          "quality": "RARE",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/466975.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 5964,
+          "name": "Epaulières barbares",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135039.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 273045,
+          "name": "Drapé d’énergie fluctuante",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133770.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 273038,
+          "name": "Atours du déchu Gangrécorce",
+          "quality": "RARE",
+          "ilvl": 34,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135013.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 148,
+          "name": "Chemise robuste de trappeur",
+          "quality": "COMMON",
+          "ilvl": 1,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135005.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 270032,
+          "name": "Garde-bras de la secte",
+          "quality": "RARE",
+          "ilvl": 29,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132611.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 4107,
+          "name": "Gants de chasseur de tigres",
+          "quality": "UNCOMMON",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132938.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 273041,
+          "name": "Ceinturon en ondule-bandes",
+          "quality": "RARE",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132504.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 4108,
+          "name": "Jambières du chasseur de panthères",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134582.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 10411,
+          "name": "Bottes du Croc",
+          "quality": "RARE",
+          "ilvl": 22,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132538.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 11970,
+          "name": "Anneau de spinel d’agilité",
+          "quality": "UNCOMMON",
+          "ilvl": 34,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133353.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 11994,
+          "name": "Bague de corail de puissance",
+          "quality": "UNCOMMON",
+          "ilvl": 25,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133352.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 5200,
+          "name": "Harpon de perforation",
+          "quality": "RARE",
+          "ilvl": 22,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135130.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 17686,
+          "name": "Arc de maître-chasseur",
+          "quality": "UNCOMMON",
+          "ilvl": 43,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135499.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "AMMO",
+          "slotName": "Munitions",
+          "itemId": 3030,
+          "name": "Flèche rasoir",
+          "quality": "COMMON",
+          "ilvl": 30,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132382.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Leatherworking",
+          "skill": 160,
+          "max": 225
+        },
+        {
+          "name": "Skinning",
+          "skill": 236,
+          "max": 300
+        },
+        {
+          "name": "Cooking",
+          "skill": 127,
+          "max": 150
+        },
+        {
+          "name": "Fishing",
+          "skill": 60,
+          "max": 150
+        },
+        {
+          "name": "First Aid",
+          "skill": 150,
+          "max": 150
+        }
+      ],
+      "stats": {
+        "health": 1380,
+        "power": 1530,
+        "powerType": "Mana",
+        "strength": 50,
+        "agility": 140,
+        "stamina": 109,
+        "intellect": 62,
+        "spirit": 49,
+        "armor": 893
+      },
+      "talents": [
+        {
+          "name": "Maîtrise des bêtes",
+          "points": 24
+        }
+      ]
+    },
+    {
+      "id": "eu:nohumain-mm",
+      "region": "eu",
+      "slug": "nohumain-mm",
+      "name": "Nohumain",
+      "surname": "Mm",
+      "label": "Nohumain",
+      "addedAt": "2026-11-11T15:13:59Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 13357411,
+      "level": 36,
+      "xp": 36541,
+      "changedAt": "2026-11-21T09:36:16Z",
+      "levelAt": "2026-11-20T19:25:29Z",
+      "goalAt": null,
+      "class": {
+        "id": 2,
+        "name": "Paladin"
+      },
+      "race": {
+        "id": 1,
+        "name": "Humain"
+      },
+      "gender": "MALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 30,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T14:31:58Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/99/13357411-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/99/13357411-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 1282,
+          "name": "Camail en métal étincelant",
+          "quality": "UNCOMMON",
+          "ilvl": 33,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133070.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 4123,
+          "name": "Espauliers en métal glacial",
+          "quality": "UNCOMMON",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135038.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 4504,
+          "name": "Cape de garde nain",
+          "quality": "UNCOMMON",
+          "ilvl": 31,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133757.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 4119,
+          "name": "Tunique de chasseur de raptors",
+          "quality": "UNCOMMON",
+          "ilvl": 43,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132722.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 45,
+          "name": "Chemise d'écuyer",
+          "quality": "COMMON",
+          "ilvl": 1,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135005.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 6550,
+          "name": "Garde-poignets de soldat de courroux sacré",
+          "quality": "UNCOMMON",
+          "ilvl": 15,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132611.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 7412,
+          "name": "Gants d'infiltrateur de puissance",
+          "quality": "UNCOMMON",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132956.jpg",
+          "enchant": "Enchanté : Endurance +4 et Armure +32"
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 7462,
+          "name": "Ceinturon de chevalier de la bête",
+          "quality": "UNCOMMON",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132515.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 4108,
+          "name": "Jambières du chasseur de panthères",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134582.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 277234,
+          "name": "Bottines empressées",
+          "quality": "UNCOMMON",
+          "ilvl": 28,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132535.jpg",
+          "enchant": "Enchanté : Endurance +4 et Armure +32"
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 282283,
+          "name": "Racine malveillante",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/1769008.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 281320,
+          "name": "Anneau gravé de runes",
+          "quality": "RARE",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133357.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "TRINKET_1",
+          "slotName": "1er bijou",
+          "itemId": 18706,
+          "name": "Maître de l'arène",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133608.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 270071,
+          "name": "Marteau au cœur noir",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133053.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Skinning",
+          "skill": 3,
+          "max": 75
+        },
+        {
+          "name": "Cooking",
+          "skill": 1,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 1861,
+        "power": 1274,
+        "powerType": "Mana",
+        "strength": 98,
+        "agility": 67,
+        "stamina": 153,
+        "intellect": 45,
+        "spirit": 61,
+        "armor": 1143
+      },
+      "talents": [
+        {
+          "name": "Vindicte",
+          "points": 27
+        }
+      ]
+    },
+    {
+      "id": "eu:mathilde-pano",
+      "region": "eu",
+      "slug": "mathilde-pano",
+      "name": "Mathilde",
+      "surname": "Pano",
+      "label": "Didou",
+      "addedAt": "2026-11-12T18:45:49Z",
+      "state": "ok",
+      "source": "profile",
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": "2026-11-21T16:55:29Z",
+      "characterId": 10697349,
+      "level": 46,
+      "xp": 21621,
+      "changedAt": "2026-11-21T09:36:16Z",
+      "levelAt": "2026-11-21T09:36:16Z",
+      "goalAt": null,
+      "class": {
+        "id": 3,
+        "name": "Chasseur"
+      },
+      "race": {
+        "id": 1,
+        "name": "Humain"
+      },
+      "gender": "FEMALE",
+      "faction": "ALLIANCE",
+      "ruleset": {
+        "id": 1,
+        "name": "JcJ"
+      },
+      "guild": null,
+      "ilvl": 34,
+      "achievementPoints": 0,
+      "lastLoginAt": "2026-11-21T02:11:36Z",
+      "avatar": "https://render.worldofwarcraft.com/forever-eu/character/133/10697349-avatar.jpg",
+      "render": "https://render.worldofwarcraft.com/forever-eu/character/133/10697349-main-raw.png",
+      "gear": [
+        {
+          "slot": "HEAD",
+          "slotName": "Tête",
+          "itemId": 9889,
+          "name": "Bandeau de veneur de force",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132514.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "NECK",
+          "slotName": "Cou",
+          "itemId": 13088,
+          "name": "Charme de Gazlowe",
+          "quality": "RARE",
+          "ilvl": 41,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133276.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "SHOULDER",
+          "slotName": "Epaules",
+          "itemId": 6792,
+          "name": "Espauliers sanguins",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135060.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "BACK",
+          "slotName": "Dos",
+          "itemId": 7524,
+          "name": "Cape de tulle de brigandage",
+          "quality": "UNCOMMON",
+          "ilvl": 44,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133766.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "CHEST",
+          "slotName": "Torse",
+          "itemId": 9663,
+          "name": "Plastron du cavalier de l'aube",
+          "quality": "UNCOMMON",
+          "ilvl": 45,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132638.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "SHIRT",
+          "slotName": "Chemise",
+          "itemId": 270334,
+          "name": "Chemise tachée de sueur",
+          "quality": "COMMON",
+          "ilvl": 1,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135009.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "WRIST",
+          "slotName": "Poignets",
+          "itemId": 4745,
+          "name": "Brassards de chevaucheur martial",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132608.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "HANDS",
+          "slotName": "Mains",
+          "itemId": 9920,
+          "name": "Gants de pisteur de brigandage",
+          "quality": "UNCOMMON",
+          "ilvl": 44,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132959.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "WAIST",
+          "slotName": "Taille",
+          "itemId": 277232,
+          "name": "Chaîne abandonnée de geôlier",
+          "quality": "UNCOMMON",
+          "ilvl": 35,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132511.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "LEGS",
+          "slotName": "Jambes",
+          "itemId": 274939,
+          "name": "Jambières de la garde du Sud",
+          "quality": "UNCOMMON",
+          "ilvl": 40,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/134583.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "FEET",
+          "slotName": "Pieds",
+          "itemId": 270047,
+          "name": "Bottes de sentinelle",
+          "quality": "UNCOMMON",
+          "ilvl": 32,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132535.jpg",
+          "enchant": "Enchanté : Endurance +1 et armure +8"
+        },
+        {
+          "slot": "FINGER_1",
+          "slotName": "1er anneau",
+          "itemId": 1076,
+          "name": "Anneau du renégat défias",
+          "quality": "RARE",
+          "ilvl": 26,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133344.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "FINGER_2",
+          "slotName": "2e anneau",
+          "itemId": 9538,
+          "name": "Anneau d'or de Talvash",
+          "quality": "RARE",
+          "ilvl": 37,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/133345.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "MAIN_HAND",
+          "slotName": "Main droite",
+          "itemId": 276102,
+          "name": "Lame-vent",
+          "quality": "UNCOMMON",
+          "ilvl": 42,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135277.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "RANGED",
+          "slotName": "À distance",
+          "itemId": 10508,
+          "name": "Tromblon en mithril",
+          "quality": "UNCOMMON",
+          "ilvl": 41,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/135616.jpg",
+          "enchant": null
+        },
+        {
+          "slot": "AMMO",
+          "slotName": "Munitions",
+          "itemId": 11284,
+          "name": "Balles de précision",
+          "quality": "COMMON",
+          "ilvl": 45,
+          "icon": "https://render.worldofwarcraft.com/forever-eu/icons/56/132383.jpg",
+          "enchant": null
+        }
+      ],
+      "professions": [
+        {
+          "name": "Leatherworking",
+          "skill": 49,
+          "max": 75
+        },
+        {
+          "name": "Skinning",
+          "skill": 150,
+          "max": 225
+        },
+        {
+          "name": "Cooking",
+          "skill": 3,
+          "max": 75
+        }
+      ],
+      "stats": {
+        "health": 2182,
+        "power": 1755,
+        "powerType": "Mana",
+        "strength": 99,
+        "agility": 126,
+        "stamina": 149,
+        "intellect": 49,
+        "spirit": 84,
+        "armor": 1462
+      },
+      "talents": [
+        {
+          "name": "Maîtrise des bêtes",
+          "points": 33
+        },
+        {
+          "name": "Précision",
+          "points": 4
+        }
+      ]
+    },
+    {
+      "id": "eu:luna-luxe",
+      "region": "eu",
+      "slug": "luna-luxe",
+      "name": "Luna",
+      "surname": "Luxe",
+      "label": "lucas",
+      "addedAt": "2026-11-13T12:34:24Z",
+      "state": "pending",
+      "source": null,
+      "checkedAt": "2026-11-21T16:55:29Z",
+      "seenAt": null,
+      "characterId": null,
+      "level": null,
+      "xp": null,
+      "changedAt": null,
+      "levelAt": null,
+      "goalAt": null,
+      "class": null,
+      "race": null,
+      "gender": null,
+      "faction": null,
+      "ruleset": null,
+      "guild": null,
+      "ilvl": null,
+      "achievementPoints": null,
+      "lastLoginAt": null,
+      "avatar": null,
+      "render": null,
+      "gear": null,
+      "professions": null,
+      "stats": null,
+      "talents": null
+    }
+  ]
+}
